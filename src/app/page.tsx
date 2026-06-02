@@ -1,17 +1,33 @@
+import { Header } from "@/components/layout/Header"
+import { Footer } from "@/components/layout/Footer"
+import { HeroSection } from "@/components/sections/HeroSection"
+import { RefugeSection } from "@/components/sections/RefugeSection"
+import { ExperiencesSection } from "@/components/sections/ExperiencesSection"
+import { RestaurantSection } from "@/components/sections/RestaurantSection"
+import { WeeklyAgenda } from "@/components/sections/WeeklyAgenda"
+import { CabinSection } from "@/components/sections/CabinSection"
+import { GallerySection } from "@/components/sections/GallerySection"
+import { MomentsSection } from "@/components/sections/MomentsSection"
+import { LocationSection } from "@/components/sections/LocationSection"
+import { ReservationCTA } from "@/components/sections/ReservationCTA"
+
 export default function HomePage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center">
-      <div className="space-y-4 px-6 text-center">
-        <p className="font-sans text-sm uppercase tracking-[0.3em] text-muted-foreground">
-          Ouro, Santa Catarina
-        </p>
-        <h1 className="font-heading text-6xl font-light italic md:text-8xl text-gradient-gold">
-          Invernada do Sol
-        </h1>
-        <p className="mx-auto max-w-md font-sans text-lg font-light text-muted-foreground">
-          Uma experiência que aquece a alma
-        </p>
-      </div>
-    </main>
+    <>
+      <Header />
+      <main>
+        <HeroSection />
+        <RefugeSection />
+        <ExperiencesSection />
+        <RestaurantSection />
+        <WeeklyAgenda />
+        <CabinSection />
+        <GallerySection />
+        <MomentsSection />
+        <LocationSection />
+        <ReservationCTA />
+      </main>
+      <Footer />
+    </>
   )
 }
