@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s | Invernada do Sol",
   },
   description:
-    "Uma experiência gastronômica única em plena Serra Catarinense. Sabores do inverno, aconchego das cabanas e a magia de Ouro-SC.",
+    "Uma experiência gastronômica única em plena Serra Catarinense. Sabores do inverno, aconchego da cabana e a magia de Ouro-SC.",
   keywords: [
     "restaurante",
     "cabanas",

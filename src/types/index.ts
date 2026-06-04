@@ -1,7 +1,5 @@
 /* Shared types for Invernada do Sol */
 
-import type { LucideIcon } from "lucide-react"
-
 export interface MenuItem {
   id: string
   name: string
@@ -20,13 +18,6 @@ export type MenuCategory =
   | "bebidas"
   | "especiais"
 
-export interface Experience {
-  id: string
-  title: string
-  description: string
-  icon: LucideIcon
-}
-
 export interface AgendaEvent {
   id: string
   tag: string
@@ -41,14 +32,6 @@ export interface Moment {
   alt: string
   tag: string
   caption: string
-}
-
-export interface GalleryImage {
-  src: string
-  alt: string
-  width: number
-  height: number
-  category?: "food" | "cabin" | "nature" | "event"
 }
 
 export interface NavItem {

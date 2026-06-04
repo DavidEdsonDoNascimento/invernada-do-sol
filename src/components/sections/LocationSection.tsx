@@ -35,10 +35,7 @@ export function LocationSection() {
                 <MapPin className="mt-0.5 size-5 shrink-0 text-primary" strokeWidth={1.25} />
                 <div className="font-sans text-sm font-light text-foreground/85">
                   <p>{siteConfig.location.address}</p>
-                  <p>
-                    {siteConfig.location.city} — {siteConfig.location.state},{" "}
-                    {siteConfig.location.country}
-                  </p>
+                  <p>{siteConfig.location.region}</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
@@ -56,7 +53,16 @@ export function LocationSection() {
 
           <AnimateIn delay={0.4}>
             <a
-              href={siteConfig.location.mapsUrl}
+              href={siteConfig.location.mapsPlaceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block text-sm font-light text-primary underline-offset-4 hover:underline"
+            >
+              Abrir no Maps
+            </a>
+            <br />
+            <a
+              href={siteConfig.location.mapsDirectionsUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block text-sm font-light text-primary underline-offset-4 hover:underline"

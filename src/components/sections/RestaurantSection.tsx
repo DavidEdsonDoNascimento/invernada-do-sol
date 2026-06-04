@@ -33,6 +33,25 @@ const highlights = [
   },
 ]
 
+const tableGallery = [
+  {
+    src: "/images/restaurante/churrasco-1.jpg",
+    alt: "Churrasco assando na brasa, no fogo de chão da Invernada do Sol",
+  },
+  {
+    src: "/images/restaurante/churrasco-2.jpg",
+    alt: "Carnes na lenha sendo preparadas na Invernada do Sol",
+  },
+  {
+    src: "/images/restaurante/mesa-farta-1.jpg",
+    alt: "Mesa farta com pratos da Serra Catarinense para compartilhar",
+  },
+  {
+    src: "/images/restaurante/mesa-farta-2.jpg",
+    alt: "Fartura da mesa colonial da Invernada do Sol servida para a família",
+  },
+]
+
 export function RestaurantSection() {
   return (
     <section id="restaurante" className="px-6 py-28 md:py-36">
@@ -96,6 +115,37 @@ export function RestaurantSection() {
               </p>
             </AnimateIn>
           </div>
+        </div>
+
+        <div className="mt-20">
+          <AnimateIn>
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-8 bg-primary/50" />
+              <p className="text-xs font-light uppercase tracking-[0.35em] text-primary">
+                Do fogo de chão à mesa farta
+              </p>
+              <span className="h-px w-8 bg-primary/50" />
+            </div>
+          </AnimateIn>
+          <StaggerContainer className="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-4">
+            {tableGallery.map((photo) => (
+              <AnimateIn
+                key={photo.src}
+                variants={scaleIn}
+                className="group overflow-hidden rounded-sm"
+              >
+                <div className="relative aspect-[4/5] overflow-hidden">
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    fill
+                    sizes="(min-width: 1024px) 25vw, 50vw"
+                    className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                  />
+                </div>
+              </AnimateIn>
+            ))}
+          </StaggerContainer>
         </div>
 
         <StaggerContainer className="mt-20 grid gap-10 sm:grid-cols-3">

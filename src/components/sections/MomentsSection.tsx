@@ -3,7 +3,8 @@ import { AnimateIn } from "@/components/motion/AnimateIn"
 import { StaggerContainer } from "@/components/motion/StaggerContainer"
 import { scaleIn } from "@/lib/animations/variants"
 import { SectionTitle } from "@/components/ui/SectionTitle"
-import { moments } from "@/content/moments"
+import { BackgroundVideo } from "@/components/ui/BackgroundVideo"
+import { featuredMoment, moments } from "@/content/moments"
 
 export function MomentsSection() {
   return (
@@ -12,12 +13,45 @@ export function MomentsSection() {
         <AnimateIn>
           <SectionTitle
             eyebrow="Momentos na Invernada"
-            title="Histórias reais que aconteceram aqui"
-            intro="Famílias, encontros, casamentos e celebrações. Cada pessoa que passa pela Invernada do Sol leva embora uma memória — e deixa um pedacinho da sua história com a gente."
+            title="O palco dos dias mais importantes da vida"
+            intro="Casamentos, famílias, encontros e celebrações. Cada pessoa que passa por aqui leva uma memória — e deixa um pedacinho da sua história com a gente."
           />
         </AnimateIn>
 
-        <StaggerContainer className="mt-16 grid gap-6 md:grid-cols-3">
+        <div className="mt-16 grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          <AnimateIn variants={scaleIn}>
+            <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
+              <BackgroundVideo
+                src={featuredMoment.src}
+                label={featuredMoment.label}
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-transparent" />
+            </div>
+          </AnimateIn>
+
+          <div className="space-y-5">
+            <AnimateIn>
+              <div className="flex items-center gap-3">
+                <span className="h-px w-8 bg-primary/50" />
+                <p className="text-xs font-light uppercase tracking-[0.35em] text-primary">
+                  {featuredMoment.tag}
+                </p>
+              </div>
+            </AnimateIn>
+            <AnimateIn delay={0.1}>
+              <h3 className="text-balance font-heading text-3xl font-light italic text-foreground md:text-4xl">
+                {featuredMoment.title}
+              </h3>
+            </AnimateIn>
+            <AnimateIn delay={0.2}>
+              <p className="max-w-prose font-sans text-base font-light leading-relaxed text-muted-foreground">
+                {featuredMoment.text}
+              </p>
+            </AnimateIn>
+          </div>
+        </div>
+
+        <StaggerContainer className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {moments.map((moment) => (
             <AnimateIn
               key={moment.id}
@@ -29,7 +63,7 @@ export function MomentsSection() {
                   src={moment.src}
                   alt={moment.alt}
                   fill
-                  sizes="(min-width: 768px) 33vw, 100vw"
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                   className="object-cover transition-transform duration-1000 group-hover:scale-105"
                 />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />

@@ -9,16 +9,19 @@ export const siteConfig = {
     state: "SC",
     country: "Brasil",
     region: "Serra Catarinense",
-    address: "Estrada da Invernada, s/n — Interior",
+    address: "Rod. SC 467, km 14, Santa Lúcia, Ouro-SC",
     cep: "89663-000",
-    coordinates: { lat: -27.336, lng: -51.616 },
-    mapsUrl: "https://www.google.com/maps/search/?api=1&query=Ouro+Santa+Catarina",
+    coordinates: { lat: -27.3414, lng: -51.6181 },
+    mapsPlaceUrl:
+      "https://www.google.com/maps/search/?api=1&query=Invernada+do+Sol,Rod.+SC+467,+km+14,+Santa+L%C3%BAcia,+Ouro,+SC",
+    mapsDirectionsUrl:
+      "https://www.google.com/maps/dir/?api=1&destination=Invernada+do+Sol,Rod.+SC+467,+km+14,+Santa+L%C3%BAcia,+Ouro,+SC",
     mapEmbedUrl:
-      "https://www.google.com/maps?q=Ouro,Santa+Catarina,Brasil&output=embed",
+      "https://www.google.com/maps?q=Invernada+do+Sol,Rod.+SC+467,+km+14,+Santa+L%C3%BAcia,+Ouro,+SC&output=embed",
   },
   contact: {
-    whatsapp: "+55 49 9 0000-0000",
-    phoneDisplay: "(49) 9 0000-0000",
+    whatsapp: "+55049999711536",
+    phoneDisplay: "(49) 9 99971-1536",
     email: "contato@invernadadosol.com.br",
     instagram: "@invernadadosol",
     instagramUrl: "https://instagram.com/invernadadosol",
@@ -42,7 +45,7 @@ export const siteConfig = {
     cabinAvailability: {
       label: "Consultar Disponibilidade da Cabana",
       message:
-        "Olá! Gostaria de consultar a disponibilidade das cabanas da Invernada do Sol.",
+        "Olá! Gostaria de consultar a disponibilidade da cabana da Invernada do Sol.",
     },
   },
   nav: [
@@ -52,7 +55,6 @@ export const siteConfig = {
     { label: "Restaurante", href: "#restaurante" },
     { label: "Agenda", href: "#agenda" },
     { label: "Cabana", href: "#cabanas" },
-    { label: "Galeria", href: "#galeria" },
     { label: "Localização", href: "#localizacao" },
   ],
 } as const

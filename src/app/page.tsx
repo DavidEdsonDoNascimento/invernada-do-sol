@@ -6,7 +6,6 @@ import { ExperiencesSection } from "@/components/sections/ExperiencesSection"
 import { RestaurantSection } from "@/components/sections/RestaurantSection"
 import { WeeklyAgenda } from "@/components/sections/WeeklyAgenda"
 import { CabinSection } from "@/components/sections/CabinSection"
-import { GallerySection } from "@/components/sections/GallerySection"
 import { MomentsSection } from "@/components/sections/MomentsSection"
 import { LocationSection } from "@/components/sections/LocationSection"
 import { ReservationCTA } from "@/components/sections/ReservationCTA"
@@ -22,7 +21,6 @@ export default function HomePage() {
         <RestaurantSection />
         <WeeklyAgenda />
         <CabinSection />
-        <GallerySection />
         <MomentsSection />
         <LocationSection />
         <ReservationCTA />
