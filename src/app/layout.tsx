@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Cormorant, DM_Sans } from "next/font/google";
+import { siteConfig, siteUrl } from "@/config/site";
+import { JsonLd } from "@/components/seo/JsonLd";
 import "./globals.css";
 
 const cormorant = Cormorant({
@@ -18,47 +20,55 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl()),
   title: {
-    default: "Invernada do Sol — Restaurante & Cabanas em Ouro, SC",
+    default: siteConfig.seo.title,
     template: "%s | Invernada do Sol",
   },
-  description:
-    "Uma experiência gastronômica única em plena Serra Catarinense. Sabores do inverno, aconchego da cabana e a magia de Ouro-SC.",
-  keywords: [
-    "restaurante",
-    "cabanas",
-    "Ouro SC",
-    "Serra Catarinense",
-    "gastronomia",
-    "inverno",
-    "experiência",
-  ],
-  authors: [{ name: "Invernada do Sol" }],
-  creator: "Invernada do Sol",
-  metadataBase: new URL("https://invernadadosol.com.br"),
+  description: siteConfig.seo.description,
+  keywords: [...siteConfig.seo.keywords],
+  applicationName: siteConfig.name,
+  authors: [{ name: siteConfig.name, url: siteUrl() }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
+  category: "restaurant",
+  alternates: {
+    canonical: siteUrl(),
+  },
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    url: "https://invernadadosol.com.br",
-    siteName: "Invernada do Sol",
-    title: "Invernada do Sol — Restaurante & Cabanas em Ouro, SC",
-    description:
-      "Uma experiência gastronômica única em plena Serra Catarinense.",
+    url: siteUrl(),
+    siteName: siteConfig.name,
+    title: siteConfig.seo.title,
+    description: siteConfig.seo.description,
     images: [
       {
-        url: "/og-image.jpg",
+        url: siteConfig.seo.ogImage,
         width: 1200,
         height: 630,
-        alt: "Invernada do Sol",
+        alt: siteConfig.seo.ogImageAlt,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Invernada do Sol",
-    description:
-      "Uma experiência gastronômica única em plena Serra Catarinense.",
-    images: ["/og-image.jpg"],
+    title: siteConfig.seo.title,
+    description: siteConfig.seo.description,
+    images: [siteConfig.seo.ogImage],
+  },
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/icon.svg", sizes: "any" },
+      { url: "/icon-16.png", type: "image/png", sizes: "16x16" },
+      { url: "/icon-32.png", type: "image/png", sizes: "32x32" },
+      { url: "/icon-48.png", type: "image/png", sizes: "48x48" },
+      { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
+      { url: "/icon-512.png", type: "image/png", sizes: "512x512" },
+    ],
+    shortcut: "/icon.svg",
+    apple: "/apple-icon.png",
   },
   robots: {
     index: true,
@@ -71,6 +81,12 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  // Verificação de propriedade dos webmasters — preencher quando os tokens
+  // forem emitidos pelo cliente (ver pendências no relatório da Fase 4):
+  // verification: {
+  //   google: "TOKEN_GOOGLE_SEARCH_CONSOLE",
+  //   other: { "msvalidate.01": "TOKEN_BING_WEBMASTER" },
+  // },
 };
 
 export const viewport: Viewport = {
@@ -90,7 +106,10 @@ export default function RootLayout({
       lang="pt-BR"
       className={`${cormorant.variable} ${dmSans.variable} h-full`}
     >
-      <body className="min-h-full flex flex-col antialiased">{children}</body>
+      <body className="min-h-full flex flex-col antialiased">
+        <JsonLd />
+        {children}
+      </body>
     </html>
   );
 }

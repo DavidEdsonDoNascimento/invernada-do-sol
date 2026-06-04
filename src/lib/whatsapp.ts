@@ -1,7 +1,7 @@
 import { siteConfig } from "@/config/site"
 
 export function buildWhatsappUrl(message: string): string {
-  const phone = siteConfig.contact.whatsapp.replace(/\D/g, "")
+  const phone = siteConfig.contact.phoneE164.replace(/\D/g, "")
   return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`
 }
 
