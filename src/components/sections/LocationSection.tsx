@@ -5,7 +5,7 @@ import { siteConfig } from "@/config/site"
 
 export function LocationSection() {
   return (
-    <section id="localizacao" className="px-6 py-28 md:py-36">
+    <section id="localizacao" className="px-6 pt-28 pb-32 md:pt-36 md:pb-40">
       <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <div className="space-y-6">
           <AnimateIn>

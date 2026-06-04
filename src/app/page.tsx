@@ -8,7 +8,6 @@ import { WeeklyAgenda } from "@/components/sections/WeeklyAgenda"
 import { CabinSection } from "@/components/sections/CabinSection"
 import { MomentsSection } from "@/components/sections/MomentsSection"
 import { LocationSection } from "@/components/sections/LocationSection"
-import { ReservationCTA } from "@/components/sections/ReservationCTA"
 
 export default function HomePage() {
   return (
@@ -23,7 +22,6 @@ export default function HomePage() {
         <CabinSection />
         <MomentsSection />
         <LocationSection />
-        <ReservationCTA />
       </main>
       <Footer />
     </>

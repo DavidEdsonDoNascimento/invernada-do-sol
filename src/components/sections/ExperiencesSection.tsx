@@ -40,7 +40,7 @@ export function ExperiencesSection() {
           <AnimateIn variants={scaleIn} className="group relative overflow-hidden rounded-sm">
             <div className="relative aspect-[4/5] overflow-hidden">
               <Image
-                src="/images/cabanas/paisagem-dia.jpg"
+                src="/images/cabanas/paisagem-dia.webp"
                 alt="Pôr do sol sobre a Serra Catarinense, entre araucárias, na Invernada do Sol"
                 fill
                 sizes="(min-width: 768px) 50vw, 100vw"

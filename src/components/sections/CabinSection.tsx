@@ -84,7 +84,7 @@ export function CabinSection() {
           <AnimateIn variants={scaleIn}>
             <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
               <Image
-                src="/images/cabanas/paisagem-dia.jpg"
+                src="/images/cabanas/paisagem-dia.webp"
                 alt="Vista da Serra Catarinense a partir da cabana da Invernada do Sol"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
