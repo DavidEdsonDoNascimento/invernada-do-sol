@@ -12,7 +12,7 @@ export function GallerySection() {
         <AnimateIn>
           <SectionTitle
             eyebrow="Galeria"
-            title="O refúgio em imagens"
+            title="Um passeio pela serra, a lareira e o pôr do sol"
           />
         </AnimateIn>
 

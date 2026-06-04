@@ -11,8 +11,8 @@ export function ExperiencesSection() {
         <AnimateIn>
           <SectionTitle
             eyebrow="A Experiência"
-            title="Quatro razões para ficar"
-            intro="Mais do que uma refeição, uma noite inteira pensada para o corpo descansar e a alma aquecer."
+            title="O que faz da Invernada um refúgio"
+            intro="Mais do que uma refeição: encontros, gastronomia afetiva e a serra inteira pra desacelerar e aquecer a alma."
           />
         </AnimateIn>
 

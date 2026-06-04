@@ -4,30 +4,30 @@ import type { Experience } from "@/types"
 export const experiences: Experience[] = [
   {
     id: "fogo",
-    title: "O fogo aceso",
+    title: "A lareira acesa",
     description:
-      "Cada noite começa em torno das chamas. Lareira acesa, brasa viva e o calor que reúne quem chega.",
+      "Toda noite começa em volta do fogo. A lareira acesa, o calor e aquele aconchego que reúne quem chega.",
     icon: Flame,
   },
   {
     id: "serra",
-    title: "A serra ao redor",
+    title: "A Serra Catarinense",
     description:
-      "Entre araucárias e neblina, o silêncio da Serra Catarinense convida a desacelerar e simplesmente estar.",
+      "Entre araucárias e neblina, o silêncio da serra convida a desacelerar e simplesmente estar presente.",
     icon: Mountain,
   },
   {
     id: "mesa",
-    title: "A mesa demorada",
+    title: "Gastronomia afetiva",
     description:
-      "Vinhos da serra, pratos de inverno e o tempo que não tem pressa. Aqui, a refeição é o destino.",
+      "Buffet de Sopas, Café Colonial e os sabores da serra numa mesa feita pra encontros que não têm pressa.",
     icon: Wine,
   },
   {
     id: "noite",
-    title: "A noite na cabana",
+    title: "O pôr do sol",
     description:
-      "Quando a última taça é servida, você não vai embora. Fica. Dorme sob o céu de Ouro e acorda com a serra.",
+      "O fim de tarde mais bonito da região pintando o céu — e histórias que viram memória pra vida toda.",
     icon: Moon,
   },
 ]

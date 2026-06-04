@@ -1,11 +1,40 @@
+import Image from "next/image"
+import { Sparkles, TreePine, Moon, Sunset } from "lucide-react"
 import { AnimateIn } from "@/components/motion/AnimateIn"
 import { StaggerContainer } from "@/components/motion/StaggerContainer"
+import { scaleIn } from "@/lib/animations/variants"
 import { SectionTitle } from "@/components/ui/SectionTitle"
-import { CabinCard } from "@/components/ui/CabinCard"
+import { BackgroundVideo } from "@/components/ui/BackgroundVideo"
 import { WhatsappButton } from "@/components/ui/WhatsappButton"
-import { cabins } from "@/content/cabins"
 import { whatsappLinks } from "@/lib/whatsapp"
 import { siteConfig } from "@/config/site"
+
+const highlights = [
+  {
+    id: "exclusividade",
+    icon: Sparkles,
+    title: "Só sua",
+    description: "Uma única cabana na propriedade. Privacidade do começo ao fim.",
+  },
+  {
+    id: "natureza",
+    icon: TreePine,
+    title: "Natureza ao redor",
+    description: "Cercada por araucárias, com a Serra Catarinense de janela.",
+  },
+  {
+    id: "silencio",
+    icon: Moon,
+    title: "Silêncio de verdade",
+    description: "O barulho aqui é o do vento e da lareira. Nada além disso.",
+  },
+  {
+    id: "paisagem",
+    icon: Sunset,
+    title: "O pôr do sol",
+    description: "O fim de tarde mais bonito da região, direto da varanda.",
+  },
+]
 
 export function CabinSection() {
   return (
@@ -13,19 +42,82 @@ export function CabinSection() {
       <div className="mx-auto max-w-7xl">
         <AnimateIn>
           <SectionTitle
-            eyebrow="As Cabanas"
-            title="Não venha apenas jantar. Fique."
-            intro="Quando a última taça é servida, a serra ainda tem muito a oferecer. Durma dentro da névoa e acorde com o vale aos seus pés."
+            eyebrow="A Cabana"
+            title="Uma cabana, uma experiência só sua"
+            intro="Aqui não existem dezenas de quartos. Existe uma cabana, pensada pra quem quer se desligar do mundo e se reconectar com a serra, o silêncio e quem veio junto."
           />
         </AnimateIn>
 
-        <StaggerContainer className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {cabins.map((cabin) => (
-            <AnimateIn key={cabin.id}>
-              <CabinCard {...cabin} />
+        <AnimateIn variants={scaleIn} className="mt-16">
+          <div className="relative aspect-video overflow-hidden rounded-sm">
+            <BackgroundVideo
+              src="/images/cabanas/cabana-invernada-do-sol.mp4"
+              label="Cabana da Invernada do Sol em meio à Serra Catarinense"
+            />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+          </div>
+        </AnimateIn>
+
+        <div className="mt-16 grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          <div className="space-y-6">
+            <AnimateIn>
+              <h3 className="text-balance font-heading text-3xl font-light italic text-foreground md:text-4xl">
+                Dormir ouvindo o silêncio da serra
+              </h3>
             </AnimateIn>
-          ))}
-        </StaggerContainer>
+            <AnimateIn delay={0.1}>
+              <p className="max-w-prose font-sans text-base font-light leading-relaxed text-muted-foreground">
+                Depois que o pôr do sol se despede e a última taça é servida, a
+                cabana te recebe. A lareira acesa, a vista das araucárias e a
+                névoa descendo devagar sobre o vale.
+              </p>
+            </AnimateIn>
+            <AnimateIn delay={0.2}>
+              <p className="max-w-prose font-sans text-base font-light leading-relaxed text-muted-foreground">
+                Você acorda com o canto dos pássaros e a Serra Catarinense
+                inteira diante de você. É a conexão com a natureza que só a
+                exclusividade de estar sozinho num lugar assim oferece.
+              </p>
+            </AnimateIn>
+          </div>
+
+          <AnimateIn variants={scaleIn}>
+            <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
+              <Image
+                src="/images/cabanas/paisagem-dia.jpg"
+                alt="Vista da Serra Catarinense a partir da cabana da Invernada do Sol"
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+          </AnimateIn>
+        </div>
+
+        <div className="mt-16 grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          <StaggerContainer className="order-2 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:order-1">
+            {highlights.map((item) => (
+              <AnimateIn key={item.id} className="space-y-3">
+                <item.icon className="size-7 text-primary" strokeWidth={1.25} />
+                <h4 className="font-heading text-2xl font-light italic text-foreground">
+                  {item.title}
+                </h4>
+                <p className="font-sans text-sm font-light leading-relaxed text-muted-foreground">
+                  {item.description}
+                </p>
+              </AnimateIn>
+            ))}
+          </StaggerContainer>
+
+          <AnimateIn variants={scaleIn} className="order-1 lg:order-2">
+            <div className="relative aspect-video overflow-hidden rounded-sm">
+              <BackgroundVideo
+                src="/images/cabanas/cabana-invernada-do-sol-2.mp4"
+                label="Detalhes da cabana da Invernada do Sol e a paisagem da serra"
+              />
+            </div>
+          </AnimateIn>
+        </div>
 
         <AnimateIn className="mt-16 text-center" delay={0.1}>
           <WhatsappButton

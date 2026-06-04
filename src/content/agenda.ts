@@ -1,28 +1,20 @@
-import type { AgendaItem } from "@/types"
+import type { AgendaEvent } from "@/types"
 
-export const agenda: AgendaItem[] = [
+export const agendaEvents: AgendaEvent[] = [
   {
-    id: "sexta",
-    day: "Sexta",
-    title: "Noite da lareira",
+    id: "namorados-jantar",
+    tag: "Dia dos Namorados",
+    title: "Jantar a dois na serra",
     description:
-      "Jantar harmonizado ao som do fogo, com a serra escurecendo pelas janelas.",
-    time: "a partir das 18h",
+      "Uma noite especial à luz da lareira, com menu afetivo e o pôr do sol mais bonito da região.",
+    image: "/images/momentos/dia-dos-namorados-1.jpg",
   },
   {
-    id: "sabado",
-    day: "Sábado",
-    title: "Tarde de vinhos",
+    id: "namorados-experiencia",
+    tag: "Dia dos Namorados",
+    title: "Experiência completa pra celebrar o amor",
     description:
-      "Degustação de rótulos de altitude com tábuas da região, ao pôr do sol.",
-    time: "16h às 23h",
-  },
-  {
-    id: "domingo",
-    day: "Domingo",
-    title: "Almoço da serra",
-    description:
-      "Almoço demorado de inverno, para fechar o fim de semana sem pressa de partir.",
-    time: "12h às 18h",
+      "Gastronomia, natureza e aconchego pra transformar a data num encontro inesquecível.",
+    image: "/images/momentos/dia-dos-namorados-2.jpg",
   },
 ]

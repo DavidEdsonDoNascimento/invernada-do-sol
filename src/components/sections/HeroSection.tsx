@@ -1,6 +1,5 @@
 "use client"
 
-import Image from "next/image"
 import { motion } from "framer-motion"
 import { ArrowDown } from "lucide-react"
 import { useScrollProgress, useParallax } from "@/hooks/useScrollProgress"
@@ -8,11 +7,6 @@ import { fadeUp, fadeIn } from "@/lib/animations/variants"
 import { siteConfig } from "@/config/site"
 import { whatsappLinks } from "@/lib/whatsapp"
 import { WhatsappButton } from "@/components/ui/WhatsappButton"
-
-/* Teste A/B do Hero: alterne entre imagem e vídeo de fundo.
-   true  -> vídeo /hero_fireplace.mp4 em loop
-   false -> imagem /images/hero/fireplace.webp */
-const USE_VIDEO_HERO = true
 
 export function HeroSection() {
   const { ref, scrollYProgress } = useScrollProgress()
@@ -25,29 +19,18 @@ export function HeroSection() {
       className="film-grain relative flex min-h-screen items-center justify-center overflow-hidden"
     >
       <motion.div style={{ y }} className="absolute inset-0 -top-20 -bottom-20">
-        {USE_VIDEO_HERO ? (
-          <video
-            className="h-full w-full object-cover"
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-            poster="/images/hero/fireplace.webp"
-            aria-label="Lareira acesa em uma cabana de madeira da Invernada do Sol"
-          >
-            <source src="/hero_fireplace.mp4" type="video/mp4" />
-          </video>
-        ) : (
-          <Image
-            src="/images/hero/fireplace.webp"
-            alt="Lareira acesa em uma cabana de madeira da Invernada do Sol, com o pôr do sol sobre a serra ao fundo"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover"
-          />
-        )}
+        <video
+          className="h-full w-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          poster="/images/hero/fireplace.webp"
+          aria-label="Lareira acesa em uma cabana de madeira da Invernada do Sol"
+        >
+          <source src="/hero_fireplace.mp4" type="video/mp4" />
+        </video>
       </motion.div>
 
       {/* Amber warmth + cinematic darkening for legibility */}

@@ -27,30 +27,20 @@ export interface Experience {
   icon: LucideIcon
 }
 
-export interface Cabin {
+export interface AgendaEvent {
   id: string
-  name: string
-  description: string
-  capacity: number
-  amenities: string[]
-  image: string
-  pricePerNight?: string
-}
-
-export interface AgendaItem {
-  id: string
-  day: string
+  tag: string
   title: string
   description: string
-  time?: string
+  image: string
 }
 
 export interface Moment {
   id: string
   src: string
   alt: string
-  caption?: string
-  size?: "tall" | "wide" | "square"
+  tag: string
+  caption: string
 }
 
 export interface GalleryImage {

@@ -3,7 +3,7 @@ export const siteConfig = {
   tagline: "Uma experiência que aquece a alma",
   description:
     "Restaurante e cabanas em Ouro, SC. Gastronomia de inverno, aconchego e natureza na Serra Catarinense.",
-  url: "https://invernadedosol.com.br",
+  url: "https://invernadadosol.com.br",
   location: {
     city: "Ouro",
     state: "SC",
@@ -19,10 +19,10 @@ export const siteConfig = {
   contact: {
     whatsapp: "+55 49 9 0000-0000",
     phoneDisplay: "(49) 9 0000-0000",
-    email: "contato@invernadedosol.com.br",
-    instagram: "@invernadedosol",
-    instagramUrl: "https://instagram.com/invernadedosol",
-    facebookUrl: "https://facebook.com/invernadedosol",
+    email: "contato@invernadadosol.com.br",
+    instagram: "@invernadadosol",
+    instagramUrl: "https://instagram.com/invernadadosol",
+    facebookUrl: "https://facebook.com/invernadadosol",
   },
   openingHours: {
     days: [
@@ -51,7 +51,7 @@ export const siteConfig = {
     { label: "Experiências", href: "#experiencias" },
     { label: "Restaurante", href: "#restaurante" },
     { label: "Agenda", href: "#agenda" },
-    { label: "Cabanas", href: "#cabanas" },
+    { label: "Cabana", href: "#cabanas" },
     { label: "Galeria", href: "#galeria" },
     { label: "Localização", href: "#localizacao" },
   ],

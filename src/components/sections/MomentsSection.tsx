@@ -3,15 +3,7 @@ import { AnimateIn } from "@/components/motion/AnimateIn"
 import { StaggerContainer } from "@/components/motion/StaggerContainer"
 import { scaleIn } from "@/lib/animations/variants"
 import { SectionTitle } from "@/components/ui/SectionTitle"
-import { cn } from "@/lib/utils"
 import { moments } from "@/content/moments"
-
-const sizeClasses: Record<NonNullable<(typeof moments)[number]["size"]>, string> =
-  {
-    tall: "row-span-2",
-    wide: "col-span-2",
-    square: "",
-  }
 
 export function MomentsSection() {
   return (
@@ -20,34 +12,36 @@ export function MomentsSection() {
         <AnimateIn>
           <SectionTitle
             eyebrow="Momentos na Invernada"
-            title="Memórias que aquecem depois da viagem"
-            intro="Nem tudo cabe em palavras. Algumas coisas só se sentem — o brilho do fogo, o vinho na taça, o silêncio compartilhado."
+            title="Histórias reais que aconteceram aqui"
+            intro="Famílias, encontros, casamentos e celebrações. Cada pessoa que passa pela Invernada do Sol leva embora uma memória — e deixa um pedacinho da sua história com a gente."
           />
         </AnimateIn>
 
-        <StaggerContainer className="mt-16 grid auto-rows-[200px] grid-cols-2 gap-3 md:grid-cols-4 md:auto-rows-[240px]">
+        <StaggerContainer className="mt-16 grid gap-6 md:grid-cols-3">
           {moments.map((moment) => (
             <AnimateIn
               key={moment.id}
               variants={scaleIn}
-              className={cn(
-                "group relative overflow-hidden rounded-sm",
-                moment.size && sizeClasses[moment.size]
-              )}
+              className="group relative overflow-hidden rounded-sm"
             >
-              <Image
-                src={moment.src}
-                alt={moment.alt}
-                fill
-                sizes="(min-width: 768px) 25vw, 50vw"
-                className="object-cover transition-transform duration-1000 group-hover:scale-105"
-              />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/95 via-background/25 to-transparent" />
-              {moment.caption && (
-                <p className="absolute inset-x-0 bottom-0 p-5 font-heading text-lg font-light italic leading-snug text-foreground">
+              <div className="relative aspect-[3/4] overflow-hidden">
+                <Image
+                  src={moment.src}
+                  alt={moment.alt}
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
+              </div>
+              <div className="absolute inset-x-0 bottom-0 space-y-2 p-6">
+                <p className="text-xs font-light uppercase tracking-[0.3em] text-primary">
+                  {moment.tag}
+                </p>
+                <p className="font-heading text-xl font-light italic leading-snug text-foreground">
                   {moment.caption}
                 </p>
-              )}
+              </div>
             </AnimateIn>
           ))}
         </StaggerContainer>

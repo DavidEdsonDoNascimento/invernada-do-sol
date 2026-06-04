@@ -35,11 +35,11 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Invernada do Sol" }],
   creator: "Invernada do Sol",
-  metadataBase: new URL("https://invernadedosol.com.br"),
+  metadataBase: new URL("https://invernadadosol.com.br"),
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    url: "https://invernadedosol.com.br",
+    url: "https://invernadadosol.com.br",
     siteName: "Invernada do Sol",
     title: "Invernada do Sol — Restaurante & Cabanas em Ouro, SC",
     description:

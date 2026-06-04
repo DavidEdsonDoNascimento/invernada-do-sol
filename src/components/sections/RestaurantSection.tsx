@@ -1,13 +1,37 @@
 import Image from "next/image"
+import { Soup, Coffee, Mountain } from "lucide-react"
 import { AnimateIn } from "@/components/motion/AnimateIn"
 import { StaggerContainer } from "@/components/motion/StaggerContainer"
 import { scaleIn } from "@/lib/animations/variants"
 import { SectionTitle } from "@/components/ui/SectionTitle"
-import { DishCard } from "@/components/ui/DishCard"
+import { BackgroundVideo } from "@/components/ui/BackgroundVideo"
 import { WhatsappButton } from "@/components/ui/WhatsappButton"
-import { featuredDish, menuItems } from "@/content/menu"
 import { whatsappLinks } from "@/lib/whatsapp"
 import { siteConfig } from "@/config/site"
+
+const highlights = [
+  {
+    id: "sopas",
+    icon: Soup,
+    title: "Buffet de Sopas",
+    description:
+      "Caldos e sopas quentinhas pra aquecer as noites de inverno na serra.",
+  },
+  {
+    id: "colonial",
+    icon: Coffee,
+    title: "Café Colonial",
+    description:
+      "A fartura da mesa colonial: pães, cucas, doces e o melhor da nossa terra.",
+  },
+  {
+    id: "serra",
+    icon: Mountain,
+    title: "Sabores da Serra Catarinense",
+    description:
+      "Gastronomia afetiva, feita com ingredientes da região e tempo de sobra.",
+  },
+]
 
 export function RestaurantSection() {
   return (
@@ -16,17 +40,27 @@ export function RestaurantSection() {
         <AnimateIn>
           <SectionTitle
             eyebrow="Restaurante"
-            title="O que o fogo prepara"
-            intro="Cozinha de inverno feita na lenha, com ingredientes da serra e o tempo que cada prato merece."
+            title="Gastronomia afetiva, do nosso jeito"
+            intro="Buffet de Sopas, Café Colonial e os sabores da Serra Catarinense numa mesa feita pra reunir gente."
           />
+        </AnimateIn>
+
+        <AnimateIn variants={scaleIn} className="mt-16">
+          <div className="relative aspect-video overflow-hidden rounded-sm">
+            <BackgroundVideo
+              src="/images/restaurante/buffet.mp4"
+              label="Buffet da Invernada do Sol com pratos quentes servidos na serra"
+            />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+          </div>
         </AnimateIn>
 
         <div className="mt-16 grid items-center gap-12 lg:grid-cols-2">
           <AnimateIn variants={scaleIn}>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
               <Image
-                src={featuredDish.image!}
-                alt={featuredDish.name}
+                src="/images/restaurante/buffet-de-sopas.jpg"
+                alt="Buffet de Sopas da Invernada do Sol, com panelas de caldos quentes"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover"
@@ -36,34 +70,44 @@ export function RestaurantSection() {
 
           <div className="space-y-4">
             <AnimateIn>
-              <p className="text-xs font-light uppercase tracking-[0.3em] text-muted-foreground">
-                Prato da casa
-              </p>
+              <div className="flex items-center gap-3">
+                <span className="h-px w-8 bg-primary/50" />
+                <p className="text-xs font-light uppercase tracking-[0.35em] text-primary">
+                  O famoso Buffet de Sopas
+                </p>
+              </div>
             </AnimateIn>
             <AnimateIn delay={0.1}>
               <h3 className="font-heading text-3xl font-light italic text-foreground md:text-4xl">
-                {featuredDish.name}
+                A sopa quentinha que virou tradição
               </h3>
             </AnimateIn>
             <AnimateIn delay={0.2}>
               <p className="max-w-prose font-sans text-base font-light leading-relaxed text-muted-foreground">
-                {featuredDish.description}
+                Nas noites frias da serra, nada como sentar perto da lareira com
+                uma sopa fumegante na mão. No fim de semana, o Café Colonial
+                completa a experiência com a fartura e o carinho da nossa mesa.
               </p>
             </AnimateIn>
-            {featuredDish.price && (
-              <AnimateIn delay={0.3}>
-                <p className="font-sans text-lg font-light text-primary">
-                  {featuredDish.price}
-                </p>
-              </AnimateIn>
-            )}
+            <AnimateIn delay={0.3}>
+              <p className="max-w-prose font-sans text-base font-light leading-relaxed text-muted-foreground">
+                É comida de verdade, feita pra ser compartilhada entre encontros,
+                conversas e o pôr do sol pintando as araucárias lá fora.
+              </p>
+            </AnimateIn>
           </div>
         </div>
 
-        <StaggerContainer className="mt-20 grid grid-cols-2 gap-8 lg:grid-cols-4">
-          {menuItems.map((dish) => (
-            <AnimateIn key={dish.id}>
-              <DishCard {...dish} />
+        <StaggerContainer className="mt-20 grid gap-10 sm:grid-cols-3">
+          {highlights.map((item) => (
+            <AnimateIn key={item.id} className="space-y-3">
+              <item.icon className="size-7 text-primary" strokeWidth={1.25} />
+              <h4 className="font-heading text-2xl font-light italic text-foreground">
+                {item.title}
+              </h4>
+              <p className="font-sans text-sm font-light leading-relaxed text-muted-foreground">
+                {item.description}
+              </p>
             </AnimateIn>
           ))}
         </StaggerContainer>

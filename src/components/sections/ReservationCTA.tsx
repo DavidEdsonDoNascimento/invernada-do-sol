@@ -30,13 +30,14 @@ export function ReservationCTA() {
         </AnimateIn>
         <AnimateIn delay={0.1}>
           <h2 className="text-balance font-heading text-4xl font-light italic text-gradient-gold md:text-6xl">
-            Você merece uma noite assim
+            Vem viver a Invernada do Sol
           </h2>
         </AnimateIn>
         <AnimateIn delay={0.2}>
           <p className="mx-auto max-w-md text-pretty font-sans text-base font-light leading-relaxed text-foreground/85">
-            O fogo já está aceso. Escolha entre uma mesa para a noite ou uma
-            cabana para ficar — e deixe a serra cuidar do resto.
+            A lareira já está acesa e o pôr do sol te espera. Reserve sua mesa
+            pra um Buffet de Sopas ou garanta a cabana pra ficar — e deixe a
+            serra cuidar do resto.
           </p>
         </AnimateIn>
         <AnimateIn delay={0.3}>
