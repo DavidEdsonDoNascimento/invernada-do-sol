@@ -7,7 +7,7 @@ export const agendaEvents: AgendaEvent[] = [
     title: "Jantar a dois na serra",
     description:
       "Uma noite especial à luz da lareira, com menu afetivo e o pôr do sol mais bonito da região.",
-    image: "/images/momentos/dia-dos-namorados-1.jpg",
+    image: "/images/momentos/dia-dos-namorados-1.webp",
   },
   {
     id: "namorados-experiencia",
@@ -15,6 +15,6 @@ export const agendaEvents: AgendaEvent[] = [
     title: "Experiência completa pra celebrar o amor",
     description:
       "Gastronomia, natureza e aconchego pra transformar a data num encontro inesquecível.",
-    image: "/images/momentos/dia-dos-namorados-2.jpg",
+    image: "/images/momentos/dia-dos-namorados-2.webp",
   },
 ]
