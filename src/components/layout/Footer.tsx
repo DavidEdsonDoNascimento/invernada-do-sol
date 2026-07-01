@@ -12,8 +12,8 @@ export function Footer() {
           </p>
           <p className="max-w-xs text-sm font-light leading-relaxed text-muted-foreground">
             Um refúgio de inverno em {siteConfig.location.city},{" "}
-            {siteConfig.location.state}. Gastronomia, cabanas e o silêncio de
-            Ouro - Santa Catarina.
+            {siteConfig.location.state}. Mais do que um destino, um convite
+            para relaxar, apreciar a natureza e viver bons momentos.
           </p>
         </div>
 
@@ -86,8 +86,7 @@ export function Footer() {
       </div>
 
       <div className="mx-auto mt-16 max-w-7xl border-t border-border pt-8 text-center text-xs font-light text-muted-foreground">
-        © {new Date().getFullYear()} {siteConfig.name}. Feito com calor em Ouro
-        - Santa Catarina.
+        © {new Date().getFullYear()} {siteConfig.name}. Sabores, natureza e momentos inesquecíveis. 
       </div>
     </footer>
   )

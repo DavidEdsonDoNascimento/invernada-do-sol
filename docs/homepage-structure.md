@@ -84,10 +84,14 @@ centered `WhatsappButton` CTA. Photos and highlights are arrays in the file.
 
 **File**: `src/components/sections/WeeklyAgenda.tsx` · **Anchor**: `#agenda`
 
-`bg-secondary` band. `SectionTitle` (eyebrow "Agenda") + a 2-column grid of
-event cards mapped from **`src/content/agenda.ts`** (`agendaEvents`). Closes with
-a paragraph linking to Instagram. Content here is data-driven — edit the content
-file, not the component.
+`bg-secondary` band. `SectionTitle` (eyebrow "Agenda") + a 2-video `BackgroundVideo`
+grid (Sunday family lunch, the venue itself — same visual pattern as
+`ExperiencesSection`) with tag/caption overlays hardcoded in the component.
+Closes with a paragraph linking to Instagram via `siteConfig.contact`.
+
+> `content/agenda.ts` (`agendaEvents`, dated event cards like "Dia dos
+> Namorados") is no longer used here — it was replaced by the video grid and
+> is now an orphan, kept for a possible future dated-events row.
 
 ### 5. A Cabana — `CabinSection`
 

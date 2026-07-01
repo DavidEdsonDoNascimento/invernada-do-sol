@@ -1,9 +1,8 @@
-import Image from "next/image"
 import { AnimateIn } from "@/components/motion/AnimateIn"
 import { StaggerContainer } from "@/components/motion/StaggerContainer"
 import { scaleIn } from "@/lib/animations/variants"
 import { SectionTitle } from "@/components/ui/SectionTitle"
-import { agendaEvents } from "@/content/agenda"
+import { BackgroundVideo } from "@/components/ui/BackgroundVideo"
 import { siteConfig } from "@/config/site"
 
 export function WeeklyAgenda() {
@@ -13,43 +12,54 @@ export function WeeklyAgenda() {
         <AnimateIn>
           <SectionTitle
             eyebrow="Agenda"
-            title="Sempre tem algo acontecendo por aqui"
-            intro="Jantares especiais, Café Colonial, datas comemorativas e encontros que mudam a cada semana. A nossa agenda é viva."
+            title="O melhor da Invernada acontece aqui"
+            intro="A cada semana uma nova experiência espera por você!"
           />
         </AnimateIn>
 
-        <StaggerContainer className="mt-16 grid gap-8 sm:grid-cols-2">
-          {agendaEvents.map((event) => (
-            <AnimateIn key={event.id} variants={scaleIn}>
-              <article className="group overflow-hidden rounded-sm border border-border bg-background/40">
-                <div className="relative aspect-[4/5] overflow-hidden">
-                  <Image
-                    src={event.image}
-                    alt={`${event.title} — ${event.tag} na Invernada do Sol`}
-                    fill
-                    sizes="(min-width: 640px) 50vw, 100vw"
-                    className="object-cover transition-transform duration-1000 group-hover:scale-105"
-                  />
-                </div>
-                <div className="space-y-2 p-6">
-                  <p className="text-xs font-light uppercase tracking-[0.3em] text-primary">
-                    {event.tag}
-                  </p>
-                  <h3 className="font-heading text-2xl font-light italic text-foreground">
-                    {event.title}
-                  </h3>
-                  <p className="font-sans text-sm font-light leading-relaxed text-muted-foreground">
-                    {event.description}
-                  </p>
-                </div>
-              </article>
-            </AnimateIn>
-          ))}
+        <StaggerContainer className="mt-16 grid gap-6 sm:grid-cols-2">
+          <AnimateIn variants={scaleIn} className="group relative overflow-hidden rounded-sm">
+            <div className="relative aspect-[4/5] overflow-hidden">
+              <BackgroundVideo
+                src="/images/refugio/almoço-de-domingo.mp4"
+                label="Almoço de domingo em família na Invernada do Sol"
+                className="transition-transform duration-1000 group-hover:scale-105"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
+            </div>
+            <div className="absolute inset-x-0 bottom-0 space-y-2 p-6">
+              <p className="text-xs font-light uppercase tracking-[0.3em] text-primary">
+                Tradição de domingo
+              </p>
+              <p className="font-heading text-xl font-light italic leading-snug text-foreground">
+                O almoço em família que vira memória
+              </p>
+            </div>
+          </AnimateIn>
+
+          <AnimateIn variants={scaleIn} className="group relative overflow-hidden rounded-sm">
+            <div className="relative aspect-[4/5] overflow-hidden">
+              <BackgroundVideo
+                src="/images/refugio/local-invernada-do-sol.mp4"
+                label="Vista do espaço da Invernada do Sol"
+                className="transition-transform duration-1000 group-hover:scale-105"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
+            </div>
+            <div className="absolute inset-x-0 bottom-0 space-y-2 p-6">
+              <p className="text-xs font-light uppercase tracking-[0.3em] text-primary">
+                Nosso espaço
+              </p>
+              <p className="font-heading text-xl font-light italic leading-snug text-foreground">
+                Conheça a Invernada do Sol de perto
+              </p>
+            </div>
+          </AnimateIn>
         </StaggerContainer>
 
         <AnimateIn className="mt-12 text-center" delay={0.1}>
           <p className="font-sans text-base font-light leading-relaxed text-muted-foreground">
-            A programação muda toda semana. Acompanhe as novidades no nosso{" "}
+            Acompanhe as novidades em nosso{" "}
             <a
               href={siteConfig.contact.instagramUrl}
               target="_blank"
@@ -58,7 +68,7 @@ export function WeeklyAgenda() {
             >
               Instagram {siteConfig.contact.instagram}
             </a>{" "}
-            e venha viver a próxima.
+            e venha fazer parte dos próximos momentos especiais.
           </p>
         </AnimateIn>
       </div>
