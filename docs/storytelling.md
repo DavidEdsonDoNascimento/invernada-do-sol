@@ -73,7 +73,7 @@ What does Invernada do Sol offer that nowhere else does? Not features — feelin
 **Copy direction**:
 - 3–4 experiential pillars
 - Each pillar has an icon (Lucide), a short title, and 2 sentences max
-- Titles in Cormorant italic, descriptions in DM Sans light
+- Titles in Jedira italic, descriptions in DM Sans light
 - Focus on sensation: warmth, silence, flavor, belonging
 
 **Pillar examples**:
@@ -88,7 +88,7 @@ Dishes shown cinematically. Large photography, minimal text. The food should loo
 **Emotional goal**: Appetite. The visitor should feel hunger — not for calories, but for the experience.
 
 **Copy direction**:
-- Dish names in Cormorant
+- Dish names in Jedira
 - No lengthy descriptions — 10 words maximum per dish
 - Price is secondary or absent in the preview (full menu has it)
 - Seasonal framing: "Cardápio de Inverno 2025"

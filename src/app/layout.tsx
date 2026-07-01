@@ -1,15 +1,25 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant, DM_Sans } from "next/font/google";
+import localFont from "next/font/local";
+import { DM_Sans } from "next/font/google";
 import { siteConfig, siteUrl } from "@/config/site";
 import { JsonLd } from "@/components/seo/JsonLd";
 import "./globals.css";
 
-const cormorant = Cormorant({
-  variable: "--font-cormorant",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  style: ["normal", "italic"],
+const jedira = localFont({
+  variable: "--font-jedira",
   display: "swap",
+  src: [
+    {
+      path: "./fonts/Jedira-Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Jedira-Italic.otf",
+      weight: "400",
+      style: "italic",
+    },
+  ],
 });
 
 const dmSans = DM_Sans({
@@ -104,7 +114,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${cormorant.variable} ${dmSans.variable} h-full`}
+      className={`${jedira.variable} ${dmSans.variable} h-full`}
     >
       <body className="min-h-full flex flex-col antialiased">
         <JsonLd />

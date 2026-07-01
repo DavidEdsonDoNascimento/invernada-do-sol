@@ -92,7 +92,7 @@ array alimenta o `Header.tsx` (desktop) e o `MobileMenu.tsx`.
 |---|---|
 | Paleta (gold, ember, background, foreground...) | `src/app/globals.css` → bloco `:root` (tokens em `oklch`) |
 | Mapeamento token → classe Tailwind | `src/app/globals.css` → `@theme inline` |
-| Fontes (Cormorant / DM Sans) | `src/app/layout.tsx` |
+| Fontes (Jedira, local, títulos / DM Sans, corpo) | `src/app/layout.tsx` + arquivos em `src/app/fonts/` |
 | Utilitários cinematográficos (`.text-gradient-gold`, `.gradient-vignette`, `.gradient-bottom-fade`, `.film-grain`) | `src/app/globals.css` → `@layer utilities` |
 
 Site é **sempre dark** — não existe light mode nem variante `.dark`.

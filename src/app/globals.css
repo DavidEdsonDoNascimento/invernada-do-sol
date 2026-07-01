@@ -8,8 +8,7 @@
   /* Typography */
   --font-sans: var(--font-dm-sans);
   --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-cormorant);
-  --font-cormorant: var(--font-cormorant);
+  --font-heading: var(--font-jedira), serif;
 
   /* Brand colors */
   --color-gold: var(--gold);
@@ -131,7 +130,8 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading;
+    @apply font-heading tracking-wide;
+    line-height: 1.25;
   }
 
   ::selection {

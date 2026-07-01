@@ -64,21 +64,22 @@ The palette is built around firelight in winter darkness.
 
 ### Type System
 
-Two typefaces. Only two. Chosen to feel like they belong together.
+Two typefaces. Jedira carries the brand's identity in titles; DM Sans keeps long-form copy readable and accessible.
 
-#### Cormorant — The Soul
-- **Role**: Headlines, section titles, pull quotes, brand name
-- **Variable**: `font-heading` / `--font-cormorant`
-- **Character**: Old-world elegance, literary, slightly melancholic in italic
-- **Weights used**: Light (300), Regular (400), Medium (500) — heavy weights feel wrong here
-- **Style**: Italic is the default for hero headlines. Upright for menu items and section titles.
+#### Jedira — The Soul
+- **Role**: Headlines, section titles, pull quotes, brand name, short accent captions
+- **Variable**: `--font-jedira`, mapped to `font-heading`
+- **Files**: local font in `src/app/fonts/` — `Jedira-Regular.otf` (normal, 400), `Jedira-Italic.otf` (italic, 400), loaded via `next/font/local`
+- **Character**: The identity typeface of Invernada do Sol — old-world elegance, distinctive, decorative
+- **Style**: Italic is the default for hero headlines and emotional copy. Upright for menu items and section titles.
+- **Never**: Long-form paragraphs. Decorative display faces hurt readability and accessibility at body-text sizes — reserve Jedira for short, large-type moments.
+- **Fallback**: `serif` if the font fails to load
 
 #### DM Sans — The Voice
-- **Role**: Body text, navigation, labels, captions, UI elements
-- **Variable**: `font-sans` / `--font-dm-sans`
-- **Character**: Geometric, neutral, warm — reads cleanly at any size
+- **Role**: Body text, navigation, labels, captions, UI elements — anywhere someone reads more than a line or two
+- **Variable**: `--font-dm-sans`, mapped to `font-sans`
+- **Character**: Geometric, neutral, warm — reads cleanly at any size, generous spacing
 - **Weights used**: Light (300), Regular (400), Medium (500)
-- **Never**: Bold or heavy weights. They conflict with the brand's restraint.
 
 ### Type Scale
 
@@ -95,7 +96,7 @@ Two typefaces. Only two. Chosen to feel like they belong together.
 ### Typography Rules
 
 1. **Eyebrow before headline**: Every major section has a small uppercase label before the title. Creates visual hierarchy and rhythm.
-2. **Italic for emotion**: Use italic Cormorant for any text that carries emotional weight — taglines, quotes, poetic copy.
+2. **Italic for emotion**: Use italic Jedira for any text that carries emotional weight — taglines, quotes, poetic copy.
 3. **Never sentence-case for labels**: Eyebrows and nav items use all-caps with wide tracking.
 4. **Line length**: Body text maxes at `max-w-prose` (~65 characters). Don't let text run edge-to-edge.
 5. **Text balance**: Apply `text-balance` to all headlines. Headlines should never widow.
@@ -105,7 +106,7 @@ Two typefaces. Only two. Chosen to feel like they belong together.
 
 ## Logo & Identity Mark
 
-The wordmark uses Cormorant at light weight, with "Invernada" slightly larger than "do Sol" to create a natural pause — as if you're reading it aloud and letting the name land.
+The wordmark uses Jedira at light weight, with "Invernada" slightly larger than "do Sol" to create a natural pause — as if you're reading it aloud and letting the name land. Never set Jedira for running body paragraphs — it's a display face reserved for the wordmark and short headline moments.
 
 For digital use:
 - Always on dark backgrounds

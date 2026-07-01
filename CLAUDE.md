@@ -17,7 +17,7 @@ Premium cinematic website for **Invernada do Sol**, a winter restaurant and cabi
 | Components | shadcn/ui (`base-nova` style, base color neutral) on `@base-ui/react` |
 | Animation | Framer Motion |
 | Icons | Lucide React |
-| Fonts | Cormorant (headings) + DM Sans (body) |
+| Fonts | Jedira (brand typeface, local `next/font/local`, headings only) + DM Sans (body) |
 
 Because **React Compiler is on**, do not hand-write `useMemo`, `useCallback`, or
 `React.memo` — the compiler handles memoization. Keep components idiomatic and
@@ -60,8 +60,11 @@ Use the CSS utilities `.text-gradient-gold`, `.gradient-vignette`, `.gradient-bo
 
 ### Typography
 
-- **Headings** → `font-heading` (Cormorant, serif, italic or light)
+- Two-typeface system: **Jedira** (brand identity) for headings, **DM Sans** for body — do not use Jedira for long-form paragraphs, it's a decorative display face and hurts readability/accessibility at body-text sizes.
+- Jedira is loaded from `src/app/fonts/` (`Jedira-Regular.otf` normal 400, `Jedira-Italic.otf` italic 400) via `next/font/local`, exposed as `--font-jedira`. DM Sans is loaded via `next/font/google`, exposed as `--font-dm-sans`. Both set up in `src/app/layout.tsx`.
+- **Headings** → `font-heading` (Jedira, italic or light)
 - **Body** → `font-sans` (DM Sans, clean and readable)
+- `font-heading` maps to `var(--font-jedira), serif` and `font-sans` maps to `var(--font-dm-sans)` in `src/app/globals.css` (`@theme inline`).
 - Scale: Cinematic — use large type. `text-7xl`–`text-9xl` for hero headlines.
 - Letter spacing: `tracking-[0.2em]` or `tracking-[0.3em]` for labels and eyebrows.
 
