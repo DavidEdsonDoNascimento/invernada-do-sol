@@ -14,16 +14,20 @@ A home é montada em `src/app/page.tsx`, empilhando as seções entre `<Header>`
 | # | Seção | Âncora (`id`) | Componente | Conteúdo externo |
 |---|-------|---------------|------------|------------------|
 | 1 | Hero | `#inicio` | `sections/HeroSection.tsx` | — |
-| 2 | O Refúgio | `#refugio` | `sections/RefugeSection.tsx` | — |
-| 3 | A Experiência | `#experiencias` | `sections/ExperiencesSection.tsx` | — |
-| 4 | Restaurante | `#restaurante` | `sections/RestaurantSection.tsx` | — |
-| 5 | Agenda | `#agenda` | `sections/WeeklyAgenda.tsx` | `content/agenda.ts` |
-| 6 | A Cabana | `#cabanas` | `sections/CabinSection.tsx` | — |
-| 7 | Momentos | `#momentos` | `sections/MomentsSection.tsx` | `content/moments.ts` |
-| 8 | Localização | `#localizacao` | `sections/LocationSection.tsx` | `config/site.ts` |
+| 2 | A Experiência | `#experiencias` | `sections/ExperiencesSection.tsx` | — |
+| 3 | Restaurante | `#restaurante` | `sections/RestaurantSection.tsx` | — |
+| 4 | Agenda | `#agenda` | `sections/WeeklyAgenda.tsx` | `content/agenda.ts` |
+| 5 | A Cabana | `#cabanas` | `sections/CabinSection.tsx` | — |
+| 6 | Momentos | `#momentos` | `sections/MomentsSection.tsx` | `content/moments.ts` |
+| 7 | Localização | `#localizacao` | `sections/LocationSection.tsx` | `config/site.ts` |
 
 > **Atenção:** a seção **Momentos (`#momentos`) não está no menu** de navegação
-> (`siteConfig.nav` tem 7 itens, sem Momentos). É intencional até segunda ordem.
+> (`siteConfig.nav` tem 6 itens, sem Momentos). É intencional até segunda ordem.
+>
+> **Fusão Refúgio → Cabana:** a antiga seção "O Refúgio" (`#refugio`) foi
+> incorporada à Cabana a pedido do cliente. Seu vídeo (varanda da família) + os
+> dois parágrafos agora **abrem** a `CabinSection`, sob o título "A Cabana". Não
+> existe mais `RefugeSection.tsx` nem âncora `#refugio`.
 
 ---
 
@@ -114,7 +118,7 @@ Site é **sempre dark** — não existe light mode nem variante `.dark`.
 | Componente | Uso |
 |---|---|
 | `WhatsappButton.tsx` | Botão de CTA para WhatsApp (variantes `primary` / `outline`) — **em uso** |
-| `BackgroundVideo.tsx` | Vídeo de fundo autoplay/loop/muted — **em uso** (Refúgio, Experiências, Restaurante, Cabana, Momentos) |
+| `BackgroundVideo.tsx` | Vídeo de fundo autoplay/loop/muted — **em uso** (Experiências, Restaurante, Cabana, Momentos) |
 | `SectionTitle.tsx` | Cabeçalho de seção (eyebrow + título + intro) — **em uso** (5 seções) |
 | `DishCard.tsx` | Card de prato — **órfão** (nenhuma seção importa) |
 | `button.tsx` | Primitivo shadcn/ui — não editar à mão |

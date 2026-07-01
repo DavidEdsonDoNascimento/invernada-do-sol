@@ -26,11 +26,10 @@ invernada-do-sol/
 │   │   │   └── MobileMenu.tsx       # Slide-in mobile nav
 │   │   ├── sections/                # Full-width page sections (in render order)
 │   │   │   ├── HeroSection.tsx      # #inicio — full-screen cinematic hero
-│   │   │   ├── RefugeSection.tsx    # #refugio — brand feeling
 │   │   │   ├── ExperiencesSection.tsx # #experiencias — country life
 │   │   │   ├── RestaurantSection.tsx # #restaurante — food & warmth
 │   │   │   ├── WeeklyAgenda.tsx     # #agenda — weekly events (content/agenda.ts)
-│   │   │   ├── CabinSection.tsx     # #cabanas — the single cabin
+│   │   │   ├── CabinSection.tsx     # #cabanas — the cabin (opens with the merged "refúgio" block)
 │   │   │   ├── MomentsSection.tsx   # #momentos — celebrations (content/moments.ts)
 │   │   │   └── LocationSection.tsx  # #localizacao — map + hours
 │   │   ├── seo/

@@ -7,7 +7,7 @@ landing page with isolated sections — it functions as a **cinematic sequence**
 where each section leads naturally into the next, building emotional momentum
 toward a conversation on WhatsApp.
 
-Total sections: **8**
+Total sections: **7**
 Reading time at natural scroll: **3–5 minutes**
 
 This is intentional. The visitor who stays is the visitor who will reach out.
@@ -23,21 +23,23 @@ This is intentional. The visitor who stays is the visitor who will reach out.
 ┌─────────────────────────────────────────────────────┐
 │  1. HERO           #inicio       Cinematic opener    │
 ├─────────────────────────────────────────────────────┤
-│  2. O REFÚGIO      #refugio      Brand feeling       │
+│  2. A EXPERIÊNCIA  #experiencias Country life        │
 ├─────────────────────────────────────────────────────┤
-│  3. A EXPERIÊNCIA  #experiencias Country life        │
+│  3. RESTAURANTE    #restaurante  Food & warmth       │
 ├─────────────────────────────────────────────────────┤
-│  4. RESTAURANTE    #restaurante  Food & warmth       │
+│  4. AGENDA         #agenda       Weekly events       │
 ├─────────────────────────────────────────────────────┤
-│  5. AGENDA         #agenda       Weekly events       │
+│  5. A CABANA       #cabanas      Refuge + stay        │
 ├─────────────────────────────────────────────────────┤
-│  6. A CABANA       #cabanas      Stay overnight      │
+│  6. MOMENTOS       #momentos     Celebrations        │
 ├─────────────────────────────────────────────────────┤
-│  7. MOMENTOS       #momentos     Celebrations        │
-├─────────────────────────────────────────────────────┤
-│  8. LOCALIZAÇÃO    #localizacao  Where we are        │
+│  7. LOCALIZAÇÃO    #localizacao  Where we are        │
 └─────────────────────────────────────────────────────┘
 ```
+
+> The former **O Refúgio** section (`#refugio`) was merged into **A Cabana** at
+> the client's request — its video + copy now open the Cabin section. There is no
+> `#refugio` anchor anymore, and the Hero scroll hint points to `#experiencias`.
 
 Assembled in `src/app/page.tsx`, wrapped by `<Header>` and `<Footer>`.
 
@@ -57,15 +59,7 @@ H1 "Invernada do Sol" in `.text-gradient-gold`, two subtitles, and two
 the video via `useScrollProgress` + `useParallax`. `ArrowDown` scroll hint at the
 bottom with a gentle bounce.
 
-### 2. O Refúgio — `RefugeSection`
-
-**File**: `src/components/sections/RefugeSection.tsx` · **Anchor**: `#refugio`
-
-Two-column (image left / text right), single column on mobile. Left: portrait
-`BackgroundVideo` (family on the porch) with `scaleIn`. Right: eyebrow "O
-Refúgio" + H2 + two poetic paragraphs. Copy is **hardcoded in the component**.
-
-### 3. A Experiência — `ExperiencesSection`
+### 2. A Experiência — `ExperiencesSection`
 
 **File**: `src/components/sections/ExperiencesSection.tsx` · **Anchor**: `#experiencias`
 
@@ -73,7 +67,7 @@ Refúgio" + H2 + two poetic paragraphs. Copy is **hardcoded in the component**.
 of two tall cards: a `BackgroundVideo` (child with a goat) and an `Image`
 (sunset among araucárias), each with a bottom gradient and caption overlay.
 
-### 4. Restaurante — `RestaurantSection`
+### 3. Restaurante — `RestaurantSection`
 
 **File**: `src/components/sections/RestaurantSection.tsx` · **Anchor**: `#restaurante`
 
@@ -86,7 +80,7 @@ centered `WhatsappButton` CTA. Photos and highlights are arrays in the file.
 > **Note:** this section does **not** render a menu with prices. The
 > `content/menu.ts` file (dishes + prices) is currently orphaned.
 
-### 5. Agenda — `WeeklyAgenda`
+### 4. Agenda — `WeeklyAgenda`
 
 **File**: `src/components/sections/WeeklyAgenda.tsx` · **Anchor**: `#agenda`
 
@@ -95,17 +89,20 @@ event cards mapped from **`src/content/agenda.ts`** (`agendaEvents`). Closes wit
 a paragraph linking to Instagram. Content here is data-driven — edit the content
 file, not the component.
 
-### 6. A Cabana — `CabinSection`
+### 5. A Cabana — `CabinSection`
 
 **File**: `src/components/sections/CabinSection.tsx` · **Anchor**: `#cabanas`
 
-`SectionTitle` (eyebrow "A Cabana") → wide `BackgroundVideo` (cabin) →
-two-column block (text + landscape image) → a second two-column block pairing a
-`highlights` grid (Só sua / Natureza ao redor / Silêncio de verdade / O pôr do
-sol) with a second cabin video → centered `WhatsappButton` (outline, cabin
-availability). Single cabin — exclusivity is the pitch.
+`SectionTitle` (eyebrow "A Cabana") → **merged "refúgio" opening**: two-column
+block with the family-on-the-porch `BackgroundVideo` + two poetic paragraphs
+("Um lugar pra desacelerar e reunir quem a gente ama") → wide `BackgroundVideo`
+(cabin) → two-column block (text + landscape image) → a second two-column block
+pairing a `highlights` grid (Só sua / Natureza ao redor / Silêncio de verdade /
+O pôr do sol) with a second cabin video → centered `WhatsappButton` (outline,
+cabin availability). Single cabin — exclusivity is the pitch. This is the only
+WhatsApp CTA between the Restaurant section and the footer.
 
-### 7. Momentos — `MomentsSection`
+### 6. Momentos — `MomentsSection`
 
 **File**: `src/components/sections/MomentsSection.tsx` · **Anchor**: `#momentos`
 
@@ -114,7 +111,7 @@ featured two-column block (`featuredMoment` video + text) → a 3-column grid of
 photo cards with caption overlays. All content from **`src/content/moments.ts`**
 (`featuredMoment` + `moments`). **This section is not in the nav menu.**
 
-### 8. Localização — `LocationSection`
+### 7. Localização — `LocationSection`
 
 **File**: `src/components/sections/LocationSection.tsx` · **Anchor**: `#localizacao`
 
@@ -126,13 +123,12 @@ Two-column: left holds address, opening hours (from
 
 ## Navigation Anchor Map
 
-The nav (`siteConfig.nav`, feeding both `Header` and `MobileMenu`) has **7
+The nav (`siteConfig.nav`, feeding both `Header` and `MobileMenu`) has **6
 items** — Momentos is intentionally omitted.
 
 | Section | ID | Nav Label |
 |---|---|---|
 | Hero | `#inicio` | Início |
-| O Refúgio | `#refugio` | O Refúgio |
 | A Experiência | `#experiencias` | Experiências |
 | Restaurante | `#restaurante` | Restaurante |
 | Agenda | `#agenda` | Agenda |

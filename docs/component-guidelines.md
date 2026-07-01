@@ -59,7 +59,7 @@ Server Component.
 Full-width page sections. These are the primary building blocks of the homepage.
 
 Each section component:
-- Has its own `<section>` tag with a **hardcoded** anchor `id` (e.g. `#refugio`)
+- Has its own `<section>` tag with a **hardcoded** anchor `id` (e.g. `#cabanas`)
 - Handles its own animations internally
 - Sources **structured/reusable data** (contacts, CTAs, agenda events, moments)
   from `src/config/site.ts` or `src/content/`
