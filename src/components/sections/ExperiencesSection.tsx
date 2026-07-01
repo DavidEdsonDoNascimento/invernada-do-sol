@@ -12,8 +12,8 @@ export function ExperiencesSection() {
         <AnimateIn>
           <SectionTitle
             eyebrow="A Experiência"
-            title="Vida de serra, no ritmo da natureza"
-            intro="Animais por perto, araucárias até onde a vista alcança e o pôr do sol fechando o dia. Aqui a experiência é viver o campo de verdade, sem pressa."
+            title="Tradição, natureza e um pôr do sol inesquecível"
+            intro="Em meio à natureza, cercado por animais e pela tranquilidade do campo, nosso restaurante oferece uma experiência única. Construído em madeira rústica, combina charme, aconchego e a beleza das paisagens naturais. Ao final da tarde, os visitantes são presenteados com um dos mais belos pôr do sol da região, tornando cada momento ainda mais especial. Um lugar para saborear boa comida, apreciar a natureza e criar memórias inesquecíveis."
           />
         </AnimateIn>
 
