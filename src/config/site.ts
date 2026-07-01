@@ -66,7 +66,7 @@ export const siteConfig = {
   },
   cta: {
     reserveTable: {
-      label: "Reservar Mesa",
+      label: "Entre em Contato",
       message:
         "Olá! Gostaria de reservar uma mesa na Invernada do Sol. Poderiam me ajudar com data e horário?",
     },
