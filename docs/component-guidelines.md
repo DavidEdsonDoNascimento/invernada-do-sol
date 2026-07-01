@@ -44,12 +44,14 @@ Components that persist across pages. They know the full site context.
 
 | Component | Description |
 |---|---|
-| `Header.tsx` | Fixed top nav, transparent → frosted on scroll |
-| `Footer.tsx` | Brand info, social links, legal, WhatsApp |
-| `MobileMenu.tsx` | Full-screen overlay mobile navigation |
-| `NavLink.tsx` | Individual nav item with hover underline animation |
+| `Header.tsx` | Fixed top nav, transparent → frosted on scroll (`"use client"`) |
+| `Footer.tsx` | Brand info, social links, WhatsApp (Server Component) |
+| `MobileMenu.tsx` | Full-screen overlay mobile navigation (`"use client"`) |
 
-These are Server Components by default. If interactivity is needed (mobile menu open state), isolate it to a child `"use client"` component.
+Nav links are rendered inline by mapping over `siteConfig.nav` in `Header` and
+`MobileMenu` — there is no separate `NavLink` component today. `Header` and
+`MobileMenu` are client components (scroll listener / open state); `Footer` is a
+Server Component.
 
 ---
 
@@ -57,10 +59,17 @@ These are Server Components by default. If interactivity is needed (mobile menu 
 Full-width page sections. These are the primary building blocks of the homepage.
 
 Each section component:
-- Accepts `{ className?, id? }` (from `SectionProps` type)
-- Has its own `<section>` tag with the appropriate `id`
+- Has its own `<section>` tag with a **hardcoded** anchor `id` (e.g. `#refugio`)
 - Handles its own animations internally
-- Sources content from `src/content/` or `src/config/site.ts` — never hardcodes strings
+- Sources **structured/reusable data** (contacts, CTAs, agenda events, moments)
+  from `src/config/site.ts` or `src/content/`
+
+> **Reality check:** the `SectionProps` type exists in `src/types/index.ts`, but
+> the shipped sections **do not accept props** — they hardcode their `id`. And
+> their **narrative copy is written inline in the JSX**, not externalized. Only
+> contacts, CTAs, agenda (`content/agenda.ts`) and moments (`content/moments.ts`)
+> live outside the components. Treat "never hardcode strings" as the aspiration,
+> not the current state.
 
 ---
 
@@ -200,29 +209,27 @@ Used as section headers throughout. Eyebrow sets context; headline delivers the 
 ```
 
 ### WhatsApp CTA Button
-Used in multiple sections. Always generated from `siteConfig`.
+Used in multiple sections. **Do not hand-roll the URL** — the app already has a
+dedicated component and link builder:
+
+- `src/lib/whatsapp.ts` builds URLs from `siteConfig.contact.phoneE164` and
+  exposes ready-made `whatsappLinks.reserveTable` / `whatsappLinks.cabinAvailability`.
+- `src/components/ui/WhatsappButton.tsx` renders the button (`primary` / `outline`).
 
 ```tsx
+import { WhatsappButton } from "@/components/ui/WhatsappButton"
+import { whatsappLinks } from "@/lib/whatsapp"
 import { siteConfig } from "@/config/site"
-import { MessageCircle } from "lucide-react"
 
-export function WhatsAppCTA({ message = "Olá! Gostaria de fazer uma reserva." }) {
-  const phone = siteConfig.contact.whatsapp.replace(/\D/g, "")
-  const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`
-
-  return (
-    <a
-      href={url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 font-sans font-medium text-primary-foreground transition-all hover:scale-[1.02] hover:shadow-lg hover:shadow-primary/20"
-    >
-      <MessageCircle className="h-5 w-5" />
-      Falar com a gente
-    </a>
-  )
-}
+<WhatsappButton
+  href={whatsappLinks.reserveTable}
+  label={siteConfig.cta.reserveTable.label}
+  variant="primary"
+/>
 ```
+
+> The phone field is `siteConfig.contact.phoneE164` (E.164, e.g. `+5549...`) —
+> there is no `contact.whatsapp` field.
 
 ### Gold Divider
 A subtle separator between major thematic shifts.
@@ -255,16 +262,21 @@ Or full-width at low opacity:
 
 ## Content Separation
 
-No strings, prices, names, or contact details are hardcoded in components.
+Contacts, prices, CTAs and repeated data should not be hardcoded in components.
+(Narrative section copy currently *is* inline — see the reality-check note under
+"Section Components" — but new structured data should follow this table.)
 
-| Data type | Source |
-|---|---|
-| Brand name, contact, hours | `src/config/site.ts` |
-| Menu items | `src/content/menu.ts` |
-| Cabin info | `src/content/cabins.ts` |
-| Testimonials | `src/content/testimonials.ts` |
-| Gallery images | `src/content/gallery.ts` |
-| Static nav links | `src/config/navigation.ts` (to be created) |
+| Data type | Source | Status |
+|---|---|---|
+| Brand name, contact, hours, CTAs, nav | `src/config/site.ts` | in use |
+| Agenda events | `src/content/agenda.ts` | in use |
+| Moments (featured + gallery) | `src/content/moments.ts` | in use |
+| Menu items (dishes + prices) | `src/content/menu.ts` | **orphan** — not rendered |
+
+`DishCard` (`src/components/ui/DishCard.tsx`) is the natural consumer for
+`menu.ts` but is also currently unused. There is no `cabins.ts`,
+`testimonials.ts`, `gallery.ts` or `config/navigation.ts` — nav lives in
+`siteConfig.nav`.
 
 This structure makes CMS migration trivial: replace `import` with `fetch`.
 

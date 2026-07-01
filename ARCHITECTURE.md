@@ -24,15 +24,17 @@ invernada-do-sol/
 │   │   │   ├── Header.tsx           # Top navigation
 │   │   │   ├── Footer.tsx           # Footer with contact + social
 │   │   │   └── MobileMenu.tsx       # Slide-in mobile nav
-│   │   ├── sections/                # Full-width page sections
-│   │   │   ├── HeroSection.tsx      # Full-screen cinematic hero
-│   │   │   ├── AboutSection.tsx     # Story + brand values
-│   │   │   ├── ExperienceSection.tsx # What makes it unique
-│   │   │   ├── MenuSection.tsx      # Featured dishes preview
-│   │   │   ├── GallerySection.tsx   # Masonry / cinematic gallery
-│   │   │   ├── CabinSection.tsx     # Cabins showcase
-│   │   │   ├── TestimonialsSection.tsx
-│   │   │   └── ReservationCTA.tsx   # WhatsApp reservation CTA
+│   │   ├── sections/                # Full-width page sections (in render order)
+│   │   │   ├── HeroSection.tsx      # #inicio — full-screen cinematic hero
+│   │   │   ├── RefugeSection.tsx    # #refugio — brand feeling
+│   │   │   ├── ExperiencesSection.tsx # #experiencias — country life
+│   │   │   ├── RestaurantSection.tsx # #restaurante — food & warmth
+│   │   │   ├── WeeklyAgenda.tsx     # #agenda — weekly events (content/agenda.ts)
+│   │   │   ├── CabinSection.tsx     # #cabanas — the single cabin
+│   │   │   ├── MomentsSection.tsx   # #momentos — celebrations (content/moments.ts)
+│   │   │   └── LocationSection.tsx  # #localizacao — map + hours
+│   │   ├── seo/
+│   │   │   └── JsonLd.tsx           # Restaurant + LodgingBusiness JSON-LD
 │   │   └── motion/                  # Framer Motion wrappers
 │   │       ├── AnimateIn.tsx        # Single element reveal (useInView)
 │   │       └── StaggerContainer.tsx # Staggered list reveal
@@ -53,18 +55,22 @@ invernada-do-sol/
 │   │   └── index.ts                 # MenuItem, Cabin, GalleryImage, etc.
 │   │
 │   └── content/                     # Static content — CMS migration target
-│       ├── menu.ts                  # Menu items
-│       ├── cabins.ts                # Cabin data
-│       └── testimonials.ts          # Customer testimonials
+│       ├── agenda.ts                # Weekly agenda events (in use)
+│       ├── moments.ts               # Featured moment + gallery (in use)
+│       └── menu.ts                  # Dishes + prices (ORPHAN — not rendered yet)
 │
 ├── public/
-│   ├── images/                      # Optimized images (WebP preferred)
+│   ├── images/                      # Optimized media (WebP + mp4 background videos)
 │   │   ├── hero/
-│   │   ├── food/
-│   │   ├── cabins/
-│   │   └── gallery/
+│   │   ├── refugio/
+│   │   ├── experiencias/
+│   │   ├── restaurante/
+│   │   ├── cabanas/
+│   │   └── momentos/
+│   ├── hero_fireplace.mp4           # Hero background video
 │   └── og-image.jpg                 # Open Graph image
 │
+├── docs/                            # Project documentation (see mapa-do-projeto.md)
 ├── CLAUDE.md                        # AI assistant guide
 ├── ARCHITECTURE.md                  # This file
 ├── components.json                  # shadcn/ui config
