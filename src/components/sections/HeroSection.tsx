@@ -88,8 +88,8 @@ export function HeroSection() {
           transition={{ delay: 1 }}
           className="mt-5 max-w-xl text-pretty font-sans text-base font-light leading-relaxed text-foreground/70"
         >
-          Um refúgio acolhedor para viver devagar, reunir pessoas queridas e
-          sentir o calor das boas experiências.
+          Um lugar para desacelerar, reunir pessoas queridas e sentir o calor
+          das boas experiências.
         </motion.p>
 
         <motion.div
