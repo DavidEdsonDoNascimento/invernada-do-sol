@@ -94,7 +94,7 @@ const graph = {
       "@id": `${url}/#attraction`,
       name: `Pôr do sol da Invernada do Sol — ${location.region}`,
       description:
-        "O mais belo pôr do sol da Serra Catarinense, entre araucárias, em Santa Lúcia, Ouro-SC.",
+        "O mais belo pôr do sol de Ouro - Santa Catarina, entre araucárias, em Santa Lúcia.",
       url,
       image: `${url}${seo.ogImage}`,
       isPartOf: { "@id": `${url}/#business` },

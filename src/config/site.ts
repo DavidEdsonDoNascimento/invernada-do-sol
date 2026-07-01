@@ -10,23 +10,23 @@ export const siteConfig = {
   name: "Invernada do Sol",
   tagline: "Uma experiência que aquece a alma",
   description:
-    "Restaurante e cabanas em Ouro, SC. Gastronomia de inverno, aconchego e natureza na Serra Catarinense.",
+    "Restaurante e cabanas em Ouro, SC. Gastronomia de inverno, aconchego e natureza em Ouro - Santa Catarina.",
   url: SITE_ORIGIN,
   seo: {
-    title: "Invernada do Sol | Restaurante e Cabana na Serra Catarinense",
+    title: "Invernada do Sol | Restaurante e Cabana em Ouro - Santa Catarina",
     description:
-      "Gastronomia afetiva, cabana exclusiva, natureza e o mais belo pôr do sol da Serra Catarinense, em Santa Lúcia, Ouro-SC. Restaurante, eventos e experiências.",
+      "Gastronomia afetiva, cabana exclusiva, natureza e o mais belo pôr do sol de Ouro - Santa Catarina, no distrito de Santa Lúcia. Restaurante, eventos e experiências.",
     ogImage: "/og-image.jpg",
     ogImageAlt:
-      "Pôr do sol sobre a Serra Catarinense, entre araucárias, na Invernada do Sol em Santa Lúcia, Ouro-SC",
+      "Pôr do sol sobre Ouro - Santa Catarina, entre araucárias, na Invernada do Sol em Santa Lúcia",
     keywords: [
       "Invernada do Sol",
       "restaurante Ouro SC",
-      "cabana Serra Catarinense",
+      "cabana Ouro Santa Catarina",
       "Café Colonial",
       "Buffet de Sopas",
       "gastronomia afetiva",
-      "pôr do sol Serra Catarinense",
+      "pôr do sol Ouro Santa Catarina",
       "turismo rural Santa Catarina",
       "eventos e casamentos na serra",
       "Santa Lúcia Ouro SC",
@@ -36,7 +36,7 @@ export const siteConfig = {
     city: "Ouro",
     state: "SC",
     country: "Brasil",
-    region: "Serra Catarinense",
+    region: "Ouro - Santa Catarina",
     address: "Rod. SC 467, km 14, Santa Lúcia, Ouro-SC",
     cep: "89663-000",
     coordinates: { lat: -27.3414, lng: -51.6181 },

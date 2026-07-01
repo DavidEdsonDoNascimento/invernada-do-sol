@@ -41,7 +41,7 @@ export function ExperiencesSection() {
             <div className="relative aspect-[4/5] overflow-hidden">
               <Image
                 src="/images/cabanas/paisagem-dia.webp"
-                alt="Pôr do sol sobre a Serra Catarinense, entre araucárias, na Invernada do Sol"
+                alt="Pôr do sol sobre Ouro - Santa Catarina, entre araucárias, na Invernada do Sol"
                 fill
                 sizes="(min-width: 768px) 50vw, 100vw"
                 className="object-cover transition-transform duration-1000 group-hover:scale-105"
@@ -50,7 +50,7 @@ export function ExperiencesSection() {
             </div>
             <div className="absolute inset-x-0 bottom-0 space-y-2 p-6">
               <p className="text-xs font-light uppercase tracking-[0.3em] text-primary">
-                Serra Catarinense
+                Ouro - Santa Catarina
               </p>
               <p className="font-heading text-xl font-light italic leading-snug text-foreground">
                 O pôr do sol entre as araucárias

@@ -20,7 +20,7 @@ const highlights = [
     id: "natureza",
     icon: TreePine,
     title: "Natureza ao redor",
-    description: "Cercada por araucárias, com a Serra Catarinense de janela.",
+    description: "Cercada por araucárias, com a paisagem de Ouro - Santa Catarina de janela.",
   },
   {
     id: "silencio",
@@ -66,7 +66,7 @@ export function CabinSection() {
             <AnimateIn delay={0.1}>
               <p className="max-w-prose font-sans text-base font-light leading-relaxed text-muted-foreground">
                 A Invernada do Sol é feita de encontros. Da varanda com vista pra
-                Serra Catarinense, do cheiro da churrasqueira acesa, das araucárias
+                Ouro - Santa Catarina, do cheiro da churrasqueira acesa, das araucárias
                 que cercam tudo — e até o cachorro da família é bem-vindo. Aqui o
                 tempo passa mais devagar.
               </p>
@@ -85,7 +85,7 @@ export function CabinSection() {
           <div className="relative aspect-video overflow-hidden rounded-sm">
             <BackgroundVideo
               src="/images/cabanas/cabana-invernada-do-sol.mp4"
-              label="Cabana da Invernada do Sol em meio à Serra Catarinense"
+              label="Cabana da Invernada do Sol em meio a Ouro - Santa Catarina"
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
           </div>
@@ -107,9 +107,9 @@ export function CabinSection() {
             </AnimateIn>
             <AnimateIn delay={0.2}>
               <p className="max-w-prose font-sans text-base font-light leading-relaxed text-muted-foreground">
-                Você acorda com o canto dos pássaros e a Serra Catarinense
-                inteira diante de você. É a conexão com a natureza que só a
-                exclusividade de estar sozinho num lugar assim oferece.
+                Você acorda com o canto dos pássaros e toda a paisagem de Ouro
+                - Santa Catarina diante de você. É a conexão com a natureza que
+                só a exclusividade de estar sozinho num lugar assim oferece.
               </p>
             </AnimateIn>
           </div>
@@ -118,7 +118,7 @@ export function CabinSection() {
             <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
               <Image
                 src="/images/cabanas/paisagem-dia.webp"
-                alt="Vista da Serra Catarinense a partir da cabana da Invernada do Sol"
+                alt="Vista de Ouro - Santa Catarina a partir da cabana da Invernada do Sol"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover"

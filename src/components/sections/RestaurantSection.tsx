@@ -27,7 +27,7 @@ const highlights = [
   {
     id: "serra",
     icon: Mountain,
-    title: "Sabores da Serra Catarinense",
+    title: "Sabores de Ouro - Santa Catarina",
     description:
       "Gastronomia afetiva, feita com ingredientes da região e tempo de sobra.",
   },
@@ -44,7 +44,7 @@ const tableGallery = [
   },
   {
     src: "/images/restaurante/mesa-farta-1.jpg",
-    alt: "Mesa farta com pratos da Serra Catarinense para compartilhar",
+    alt: "Mesa farta com pratos de Ouro - Santa Catarina para compartilhar",
   },
   {
     src: "/images/restaurante/mesa-farta-2.jpg",
@@ -60,7 +60,7 @@ export function RestaurantSection() {
           <SectionTitle
             eyebrow="Restaurante"
             title="Gastronomia afetiva, do nosso jeito"
-            intro="Buffet de Sopas, Café Colonial e os sabores da Serra Catarinense numa mesa feita pra reunir gente."
+            intro="Buffet de Sopas, Café Colonial e os sabores de Ouro - Santa Catarina numa mesa feita pra reunir gente."
           />
         </AnimateIn>
 

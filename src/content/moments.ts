@@ -12,7 +12,7 @@ export const moments: Moment[] = [
   {
     id: "casamento",
     src: "/images/momentos/casamento.webp",
-    alt: "Casamento celebrado na Invernada do Sol, em meio à Serra Catarinense",
+    alt: "Casamento celebrado na Invernada do Sol, em Ouro - Santa Catarina",
     tag: "Casamentos",
     caption: "O sim mais bonito, entre araucárias",
   },

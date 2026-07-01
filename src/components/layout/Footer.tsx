@@ -12,8 +12,8 @@ export function Footer() {
           </p>
           <p className="max-w-xs text-sm font-light leading-relaxed text-muted-foreground">
             Um refúgio de inverno em {siteConfig.location.city},{" "}
-            {siteConfig.location.state}. Gastronomia, cabanas e o silêncio da
-            Serra Catarinense.
+            {siteConfig.location.state}. Gastronomia, cabanas e o silêncio de
+            Ouro - Santa Catarina.
           </p>
         </div>
 
@@ -86,8 +86,8 @@ export function Footer() {
       </div>
 
       <div className="mx-auto mt-16 max-w-7xl border-t border-border pt-8 text-center text-xs font-light text-muted-foreground">
-        © {new Date().getFullYear()} {siteConfig.name}. Feito com calor na Serra
-        Catarinense.
+        © {new Date().getFullYear()} {siteConfig.name}. Feito com calor em Ouro
+        - Santa Catarina.
       </div>
     </footer>
   )

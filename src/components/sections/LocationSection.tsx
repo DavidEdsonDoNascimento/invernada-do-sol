@@ -18,13 +18,13 @@ export function LocationSection() {
           </AnimateIn>
           <AnimateIn delay={0.1}>
             <h2 className="text-balance font-heading text-4xl font-light italic text-foreground md:text-5xl">
-              No alto da Serra Catarinense
+              No alto de Ouro - Santa Catarina
             </h2>
           </AnimateIn>
           <AnimateIn delay={0.2}>
             <p className="max-w-prose font-sans text-base font-light leading-relaxed text-muted-foreground">
               A poucos minutos do centro de {siteConfig.location.city}, no alto
-              da Serra Catarinense, cercados por araucárias e neblina. O caminho
+              de Santa Catarina, cercados por araucárias e neblina. O caminho
               até aqui, com aquele pôr do sol, já é parte da experiência.
             </p>
           </AnimateIn>

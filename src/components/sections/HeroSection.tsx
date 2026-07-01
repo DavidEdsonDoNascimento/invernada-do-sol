@@ -58,7 +58,7 @@ export function HeroSection() {
           transition={{ delay: 0.3 }}
           className="text-xs font-light uppercase tracking-[0.4em] text-primary/90"
         >
-          {siteConfig.location.city} · {siteConfig.location.region}
+          {siteConfig.location.region}
         </motion.p>
 
         <motion.h1

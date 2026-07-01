@@ -2,7 +2,7 @@
 
 ## Brand Essence
 
-**Invernada do Sol** is a contradiction made beautiful: winter and sun, cold and warmth, solitude and belonging. It exists at the intersection of the rugged Serra Catarinense and the intimate glow of a fireplace. The brand does not sell food — it sells a feeling that stays with you long after you leave.
+**Invernada do Sol** is a contradiction made beautiful: winter and sun, cold and warmth, solitude and belonging. It exists at the intersection of the rugged hills of Ouro - Santa Catarina and the intimate glow of a fireplace. The brand does not sell food — it sells a feeling that stays with you long after you leave.
 
 The experience is not for everyone. It is for those who seek depth, slowness, and beauty in unexpected places.
 
