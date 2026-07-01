@@ -78,7 +78,6 @@ export const siteConfig = {
   },
   nav: [
     { label: "Início", href: "#inicio" },
-    { label: "O Refúgio", href: "#refugio" },
     { label: "Experiências", href: "#experiencias" },
     { label: "Restaurante", href: "#restaurante" },
     { label: "Agenda", href: "#agenda" },

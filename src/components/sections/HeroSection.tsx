@@ -113,7 +113,7 @@ export function HeroSection() {
       </div>
 
       <motion.a
-        href="#refugio"
+        href="#experiencias"
         aria-label="Descer para o conteúdo"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, y: [0, 10, 0] }}

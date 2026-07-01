@@ -48,6 +48,39 @@ export function CabinSection() {
           />
         </AnimateIn>
 
+        <div className="mt-16 grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+          <AnimateIn variants={scaleIn} className="order-1">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
+              <BackgroundVideo
+                src="/images/refugio/familia-e-cachorro-varanda.mp4"
+                label="Família reunida na varanda da Invernada do Sol, com o cachorro por perto e a serra ao fundo"
+              />
+            </div>
+          </AnimateIn>
+          <div className="order-2 space-y-6">
+            <AnimateIn>
+              <h3 className="text-balance font-heading text-3xl font-light italic text-foreground md:text-4xl">
+                Um lugar pra desacelerar e reunir quem a gente ama
+              </h3>
+            </AnimateIn>
+            <AnimateIn delay={0.1}>
+              <p className="max-w-prose font-sans text-base font-light leading-relaxed text-muted-foreground">
+                A Invernada do Sol é feita de encontros. Da varanda com vista pra
+                Serra Catarinense, do cheiro da churrasqueira acesa, das araucárias
+                que cercam tudo — e até o cachorro da família é bem-vindo. Aqui o
+                tempo passa mais devagar.
+              </p>
+            </AnimateIn>
+            <AnimateIn delay={0.2}>
+              <p className="max-w-prose font-sans text-base font-light leading-relaxed text-muted-foreground">
+                É a gastronomia afetiva, a lareira acesa e o pôr do sol mais bonito
+                da região se juntando pra criar histórias. Você chega visitante e
+                vai embora com memórias que aquecem muito depois da viagem.
+              </p>
+            </AnimateIn>
+          </div>
+        </div>
+
         <AnimateIn variants={scaleIn} className="mt-16">
           <div className="relative aspect-video overflow-hidden rounded-sm">
             <BackgroundVideo
