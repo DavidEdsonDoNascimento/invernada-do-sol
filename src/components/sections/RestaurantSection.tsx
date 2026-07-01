@@ -78,7 +78,7 @@ export function RestaurantSection() {
           <AnimateIn variants={scaleIn}>
             <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
               <Image
-                src="/images/restaurante/buffet-de-sopas.jpg"
+                src="/images/restaurante/buffet_de_sopas.webp"
                 alt="Buffet de Sopas da Invernada do Sol, com panelas de caldos quentes"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"

@@ -40,18 +40,18 @@ export function WeeklyAgenda() {
           <AnimateIn variants={scaleIn} className="group relative overflow-hidden rounded-sm">
             <div className="relative aspect-[4/5] overflow-hidden">
               <BackgroundVideo
-                src="/images/refugio/local-invernada-do-sol.mp4"
-                label="Vista do espaço da Invernada do Sol"
+                src="/images/refugio/magia-do-buteco.mp4"
+                label="A magia do boteco na Invernada do Sol"
                 className="transition-transform duration-1000 group-hover:scale-105"
               />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
             </div>
             <div className="absolute inset-x-0 bottom-0 space-y-2 p-6">
               <p className="text-xs font-light uppercase tracking-[0.3em] text-primary">
-                Nosso espaço
+                Magia do boteco
               </p>
               <p className="font-heading text-xl font-light italic leading-snug text-foreground">
-                Conheça a Invernada do Sol de perto
+                A alma do boteco em noites inesquecíveis
               </p>
             </div>
           </AnimateIn>

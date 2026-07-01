@@ -10,32 +10,32 @@ export const featuredMoment = {
 
 export const moments: Moment[] = [
   {
-    id: "casamento",
-    src: "/images/momentos/casamento.webp",
-    alt: "Casamento celebrado na Invernada do Sol, em Ouro - Santa Catarina",
-    tag: "Casamentos",
-    caption: "O sim mais bonito, entre araucárias",
-  },
-  {
-    id: "casamento-3",
-    src: "/images/momentos/casamento-3.webp",
-    alt: "Cerimônia de casamento ao ar livre na Invernada do Sol",
-    tag: "Casamentos",
-    caption: "Celebrar o amor com a serra de testemunha",
-  },
-  {
-    id: "familia",
-    src: "/images/momentos/familia.webp",
+    id: "tempo-em-familia",
+    src: "/images/momentos/tempo-em-familia.webp",
     alt: "Família reunida aproveitando um encontro na Invernada do Sol",
     tag: "Família",
     caption: "Reunir quem a gente ama",
   },
   {
-    id: "familia-2",
-    src: "/images/momentos/familia-2.webp",
-    alt: "Celebração em família na natureza da Invernada do Sol",
-    tag: "Celebrações",
-    caption: "Histórias que viram memória pra vida toda",
+    id: "casamento",
+    src: "/images/momentos/casamento-2.webp",
+    alt: "Cerimônia de casamento ao ar livre na Invernada do Sol",
+    tag: "Casamentos",
+    caption: "Celebrar o amor com a serra de testemunha",
+  },
+  {
+    id: "piquenique",
+    src: "/images/momentos/piquenique.webp",
+    alt: "Mulher em um piquenique ao sol sobre a toalha xadrez entre os parreirais da Invernada do Sol",
+    tag: "Piquenique",
+    caption: "Um piquenique ao sol, sem pressa nenhuma",
+  },
+  {
+    id: "animais",
+    src: "/images/momentos/animais-invernada-do-sol.webp",
+    alt: "Ovelhas curiosas junto à cerca e ao chimarrão na Invernada do Sol",
+    tag: "Animais",
+    caption: "Bichos por perto e um chimarrão pra esquentar",
   },
   {
     id: "chopp",
