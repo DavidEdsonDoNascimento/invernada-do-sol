@@ -12,7 +12,9 @@
       "Bash(npx --yes playwright install chromium)",
       "Bash(pkill -f \"next dev\")",
       "Bash(pkill -f \"next-server\")",
-      "Bash(npx prettier *)"
+      "Bash(npx prettier *)",
+      "Bash(git check-ignore *)",
+      "Bash(echo \"exit: $?\")"
     ]
   }
 }

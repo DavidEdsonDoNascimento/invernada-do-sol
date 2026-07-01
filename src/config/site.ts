@@ -59,7 +59,7 @@ export const siteConfig = {
     days: [
       { day: "Sexta-feira", hours: "18h às 23h" },
       { day: "Sábado", hours: "12h às 23h" },
-      { day: "Domingo", hours: "12h às 18h" },
+      { day: "Domingo", hours: "12h às 14h" },
     ],
     summary: "Sexta a Domingo",
     note: "Reserva recomendada",
