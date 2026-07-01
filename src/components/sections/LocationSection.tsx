@@ -18,14 +18,17 @@ export function LocationSection() {
           </AnimateIn>
           <AnimateIn delay={0.1}>
             <h2 className="text-balance font-heading text-4xl font-light italic text-foreground md:text-5xl">
-              No alto de Ouro - Santa Catarina
+              Ouro - Santa Catarina
             </h2>
           </AnimateIn>
           <AnimateIn delay={0.2}>
             <p className="max-w-prose font-sans text-base font-light leading-relaxed text-muted-foreground">
-              A poucos minutos do centro de {siteConfig.location.city}, no alto
-              de Santa Catarina, cercados por araucárias e neblina. O caminho
-              até aqui, com aquele pôr do sol, já é parte da experiência.
+              A Invernada do Sol está localizada na rodovia SC-467, km 14, em
+              Ouro-SC, em um cenário privilegiado cercado pela natureza. De
+              fácil acesso, estamos a aproximadamente 24 km de Ouro, 46 km de
+              Concórdia e 27 km de Joaçaba, oferecendo o destino perfeito para
+              quem busca boa gastronomia, tranquilidade e um dos mais belos
+              pôr do sol da região.
             </p>
           </AnimateIn>
 
