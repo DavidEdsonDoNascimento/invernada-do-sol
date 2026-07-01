@@ -10,13 +10,18 @@ Premium cinematic website for **Invernada do Sol**, a winter restaurant and cabi
 
 | Layer | Tool |
 |---|---|
-| Framework | Next.js 15 (App Router) |
+| Framework | Next.js 16 (App Router) — see `AGENTS.md`: APIs may differ from training data, read `node_modules/next/dist/docs/` before writing framework code |
+| UI runtime | React 19 with **React Compiler enabled** (`reactCompiler: true` in `next.config.ts`) |
 | Language | TypeScript (strict) |
 | Styling | Tailwind CSS v4 + CSS variables |
-| Components | shadcn/ui (base-nova style) |
+| Components | shadcn/ui (`base-nova` style, base color neutral) on `@base-ui/react` |
 | Animation | Framer Motion |
 | Icons | Lucide React |
 | Fonts | Cormorant (headings) + DM Sans (body) |
+
+Because **React Compiler is on**, do not hand-write `useMemo`, `useCallback`, or
+`React.memo` — the compiler handles memoization. Keep components idiomatic and
+let it optimize.
 
 ## Architecture
 
@@ -26,7 +31,7 @@ src/
 ├── components/
 │   ├── ui/                 # shadcn/ui primitives (auto-generated, don't edit)
 │   ├── layout/             # Header, Footer, Nav, MobileMenu
-│   ├── sections/           # Full page sections (Hero, About, Menu, Gallery...)
+│   ├── sections/           # Full page sections (Hero, Refuge, Experiences, Restaurant, WeeklyAgenda, Cabin, Moments, Location)
 │   └── motion/             # Reusable Framer Motion wrappers (AnimateIn, StaggerContainer)
 ├── hooks/                  # useScrollProgress, useParallax, useMediaQuery
 ├── lib/
@@ -114,24 +119,44 @@ export function ExampleSection({ className, id }: SectionProps) {
 ```
 
 ### WhatsApp CTA
+Don't build the URL by hand. Use `whatsappLinks` from `@/lib/whatsapp` (built
+from `siteConfig.contact.phoneE164` — there is no `contact.whatsapp` field) with
+the `WhatsappButton` component:
 ```tsx
-const whatsappUrl = `https://wa.me/${siteConfig.contact.whatsapp.replace(/\D/g, "")}?text=...`
+import { WhatsappButton } from "@/components/ui/WhatsappButton"
+import { whatsappLinks } from "@/lib/whatsapp"
+import { siteConfig } from "@/config/site"
+
+<WhatsappButton href={whatsappLinks.reserveTable} label={siteConfig.cta.reserveTable.label} variant="primary" />
 ```
 
 ## Future Integrations (scaffold-ready)
 
 - **Reservation system** → `src/app/(booking)/` route group
-- **WhatsApp** → use `siteConfig.contact.whatsapp`, link to wa.me
+- **WhatsApp** → use `siteConfig.contact.phoneE164` via `lib/whatsapp.ts`, link to wa.me
 - **CMS** → `src/content/` folder structured for Sanity or Contentlayer migration
 - **Analytics** → add to `src/app/layout.tsx` (Vercel Analytics or Plausible)
 
 ## Commands
 
 ```bash
-npm run dev      # Development server
+npm run dev      # Development server (http://localhost:3000)
 npm run build    # Production build
-npm run lint     # ESLint
+npm start        # Serve the production build (after npm run build)
+npm run lint     # ESLint (flat config, eslint.config.mjs)
+npm run icons    # Regenerate favicons from source (scripts/generate-favicons.mjs)
 ```
+
+No test framework is configured — there is no `npm test`. Verify changes by
+running `npm run dev` / `npm run build`.
+
+## Documentation
+
+`docs/` holds the design/brand rationale and structure. Start with
+`docs/mapa-do-projeto.md` — the practical "want to change X → edit file Y" map
+(kept in sync with the real code). `docs/homepage-structure.md` documents the 8
+real sections; `docs/component-guidelines.md`, `branding.md`, `storytelling.md`,
+`motion-system.md` and `ux-principles.md` cover conventions and feel.
 
 ## Brand Voice
 
