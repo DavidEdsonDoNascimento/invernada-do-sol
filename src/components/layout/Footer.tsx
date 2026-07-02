@@ -1,15 +1,14 @@
 import { AtSign, Mail, MapPin } from "lucide-react"
 import { siteConfig } from "@/config/site"
 import { whatsappLinks } from "@/lib/whatsapp"
+import { Logo } from "@/components/layout/Logo"
 
 export function Footer() {
   return (
     <footer className="border-t border-border bg-background px-6 py-20">
       <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-3">
         <div className="space-y-4">
-          <p className="font-heading text-2xl font-light text-foreground">
-            Invernada <span className="italic text-primary">do Sol</span>
-          </p>
+          <Logo markClassName="h-11 w-11" />
           <p className="max-w-xs text-sm font-light leading-relaxed text-muted-foreground">
             Um refúgio de inverno em {siteConfig.location.city},{" "}
             {siteConfig.location.state}. Mais do que um destino, um convite

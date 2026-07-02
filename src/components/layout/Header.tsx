@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils"
 import { siteConfig } from "@/config/site"
 import { whatsappLinks } from "@/lib/whatsapp"
 import { MobileMenu } from "@/components/layout/MobileMenu"
+import { Logo } from "@/components/layout/Logo"
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false)
@@ -29,12 +30,7 @@ export function Header() {
         )}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
-          <a
-            href="#inicio"
-            className="font-heading text-xl font-light tracking-wide text-foreground"
-          >
-            Invernada <span className="italic text-primary">do Sol</span>
-          </a>
+          <Logo as="a" href="#inicio" />
 
           <nav className="hidden items-center gap-8 lg:flex" aria-label="Navegação principal">
             {siteConfig.nav.map((item) => (
