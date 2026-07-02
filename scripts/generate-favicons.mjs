@@ -11,7 +11,10 @@ const svg = await fs.readFile(svgPath);
 
 async function renderPng(size) {
   const kernel = size <= 16 ? sharp.kernel.nearest : sharp.kernel.lanczos3;
-  return sharp(svg, { density: Math.max(96, size * 12) })
+  // Densidade limitada: a fonte já é um SVG de alta resolução (viewBox ~1024),
+  // então densidades altas estouram o limite de pixels do sharp.
+  const density = Math.min(512, Math.max(96, size * 4));
+  return sharp(svg, { density })
     .resize(size, size, { kernel })
     .png({ compressionLevel: 9, palette: size <= 48, effort: 10 })
     .toBuffer();
