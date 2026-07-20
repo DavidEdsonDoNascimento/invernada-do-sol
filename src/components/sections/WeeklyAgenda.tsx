@@ -25,15 +25,6 @@ export function WeeklyAgenda() {
                 label="Almoço de domingo em família na Invernada do Sol"
                 className="transition-transform duration-1000 group-hover:scale-105"
               />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
-            </div>
-            <div className="absolute inset-x-0 bottom-0 space-y-2 p-6">
-              <p className="text-xs font-light uppercase tracking-[0.3em] text-primary">
-                Tradição de domingo
-              </p>
-              <p className="font-heading text-xl font-light italic leading-snug text-foreground">
-                O almoço em família que vira memória
-              </p>
             </div>
           </AnimateIn>
 
@@ -44,15 +35,6 @@ export function WeeklyAgenda() {
                 label="A magia do boteco na Invernada do Sol"
                 className="transition-transform duration-1000 group-hover:scale-105"
               />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
-            </div>
-            <div className="absolute inset-x-0 bottom-0 space-y-2 p-6">
-              <p className="text-xs font-light uppercase tracking-[0.3em] text-primary">
-                Magia do boteco
-              </p>
-              <p className="font-heading text-xl font-light italic leading-snug text-foreground">
-                A alma do boteco em noites inesquecíveis
-              </p>
             </div>
           </AnimateIn>
         </StaggerContainer>

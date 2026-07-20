@@ -10,33 +10,10 @@ export function Footer() {
         <div className="space-y-4">
           <Logo markClassName="h-11 w-11" />
           <p className="max-w-xs text-sm font-light leading-relaxed text-muted-foreground">
-            Um refúgio de inverno em {siteConfig.location.city},{" "}
-            {siteConfig.location.state}. Mais do que um destino, um convite
+            Mais do que um destino, um convite
             para relaxar, apreciar a natureza e viver bons momentos.
           </p>
         </div>
-
-        <div className="space-y-4">
-          <p className="text-xs font-light uppercase tracking-[0.3em] text-muted-foreground">
-            Visite
-          </p>
-          <ul className="space-y-3 text-sm font-light text-foreground/80">
-            <li className="flex items-start gap-3">
-              <MapPin className="mt-0.5 size-4 shrink-0 text-primary" />
-              <span>
-                {siteConfig.location.address}
-                <br />
-                {siteConfig.location.city} — {siteConfig.location.state}
-              </span>
-            </li>
-            {siteConfig.openingHours.days.map((d) => (
-              <li key={d.day} className="text-muted-foreground">
-                {d.day}: {d.hours}
-              </li>
-            ))}
-          </ul>
-        </div>
-
         <div className="space-y-4">
           <p className="text-xs font-light uppercase tracking-[0.3em] text-muted-foreground">
             Fale com a gente
@@ -85,7 +62,7 @@ export function Footer() {
       </div>
 
       <div className="mx-auto mt-16 max-w-7xl border-t border-border pt-8 text-center text-xs font-light text-muted-foreground">
-        © {new Date().getFullYear()} {siteConfig.name}. Sabores, natureza e momentos inesquecíveis. 
+        © {new Date().getFullYear()} {siteConfig.name}. Sabores, natureza e momentos inesquecíveis.
       </div>
     </footer>
   )

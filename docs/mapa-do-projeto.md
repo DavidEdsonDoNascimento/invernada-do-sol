@@ -6,7 +6,7 @@ movida ou adicionada, **atualize este arquivo e o `homepage-structure.md`.**
 
 ---
 
-## As 8 seções reais (ordem na tela)
+## As 6 seções reais (ordem na tela)
 
 A home é montada em `src/app/page.tsx`, empilhando as seções entre `<Header>` e
 `<Footer>`. Cada seção é um componente próprio com seu `<section id="...">`.
@@ -18,12 +18,8 @@ A home é montada em `src/app/page.tsx`, empilhando as seções entre `<Header>`
 | 3 | Restaurante | `#restaurante` | `sections/RestaurantSection.tsx` | — |
 | 4 | Agenda | `#agenda` | `sections/WeeklyAgenda.tsx` | — |
 | 5 | A Cabana | `#cabanas` | `sections/CabinSection.tsx` | — |
-| 6 | Momentos | `#momentos` | `sections/MomentsSection.tsx` | `content/moments.ts` |
-| 7 | Localização | `#localizacao` | `sections/LocationSection.tsx` | `config/site.ts` |
+| 6 | Localização | `#localizacao` | `sections/LocationSection.tsx` | `config/site.ts` |
 
-> **Atenção:** a seção **Momentos (`#momentos`) não está no menu** de navegação
-> (`siteConfig.nav` tem 6 itens, sem Momentos). É intencional até segunda ordem.
->
 > **Fusão Refúgio → Cabana:** a antiga seção "O Refúgio" (`#refugio`) foi
 > incorporada à Cabana a pedido do cliente. Seu vídeo (varanda da família) + os
 > dois parágrafos agora **abrem** a `CabinSection`, sob o título "A Cabana". Não
@@ -41,13 +37,12 @@ A home é montada em `src/app/page.tsx`, empilhando as seções entre `<Header>`
 | Título/subtítulos do Hero | `src/components/sections/HeroSection.tsx` (hardcoded na JSX) |
 | Textos poéticos de cada seção (título, parágrafos, destaques) | **dentro do próprio componente da seção** — ver tabela acima |
 | Vídeos da Agenda (almoço de domingo / espaço) | array inline em `WeeklyAgenda.tsx` |
-| Fotos + legendas da galeria de Momentos | `src/content/moments.ts` (`featuredMoment` + array `moments`) |
 | Destaques da Cabana (Só sua / Natureza / Silêncio / Pôr do sol) | array `highlights` em `CabinSection.tsx` |
 | Destaques do Restaurante (Buffet / Café Colonial / Sabores) | array `highlights` em `RestaurantSection.tsx` |
 
 > **Importante:** ao contrário do que sugere o `component-guidelines.md`, os
 > textos narrativos das seções **estão hardcoded na JSX de cada componente** —
-> não em `content/`. Só contatos, CTAs e momentos são externalizados hoje;
+> não em `content/`. Só contatos e CTAs são externalizados hoje;
 > a Agenda deixou de usar `content/agenda.ts` (ver arquivos órfãos abaixo).
 
 ### Contatos, horários e localização
@@ -119,7 +114,7 @@ Site é **sempre dark** — não existe light mode nem variante `.dark`.
 | Componente | Uso |
 |---|---|
 | `WhatsappButton.tsx` | Botão de CTA para WhatsApp (variantes `primary` / `outline`) — **em uso** |
-| `BackgroundVideo.tsx` | Vídeo de fundo autoplay/loop/muted — **em uso** (Experiências, Restaurante, Agenda, Cabana, Momentos) |
+| `BackgroundVideo.tsx` | Vídeo de fundo autoplay/loop/muted — **em uso** (Experiências, Restaurante, Agenda, Cabana) |
 | `SectionTitle.tsx` | Cabeçalho de seção (eyebrow + título + intro) — **em uso** (5 seções) |
 | `DishCard.tsx` | Card de prato — **órfão** (nenhuma seção importa) |
 | `button.tsx` | Primitivo shadcn/ui — não editar à mão |

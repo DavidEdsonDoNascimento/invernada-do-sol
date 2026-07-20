@@ -7,7 +7,7 @@ landing page with isolated sections — it functions as a **cinematic sequence**
 where each section leads naturally into the next, building emotional momentum
 toward a conversation on WhatsApp.
 
-Total sections: **7**
+Total sections: **6**
 Reading time at natural scroll: **3–5 minutes**
 
 This is intentional. The visitor who stays is the visitor who will reach out.
@@ -31,9 +31,7 @@ This is intentional. The visitor who stays is the visitor who will reach out.
 ├─────────────────────────────────────────────────────┤
 │  5. A CABANA       #cabanas      Refuge + stay        │
 ├─────────────────────────────────────────────────────┤
-│  6. MOMENTOS       #momentos     Celebrations        │
-├─────────────────────────────────────────────────────┤
-│  7. LOCALIZAÇÃO    #localizacao  Where we are        │
+│  6. LOCALIZAÇÃO    #localizacao  Where we are        │
 └─────────────────────────────────────────────────────┘
 ```
 
@@ -106,20 +104,11 @@ O pôr do sol) with a second cabin video → centered `WhatsappButton` (outline,
 cabin availability). Single cabin — exclusivity is the pitch. This is the only
 WhatsApp CTA between the Restaurant section and the footer.
 
-### 6. Momentos — `MomentsSection`
-
-**File**: `src/components/sections/MomentsSection.tsx` · **Anchor**: `#momentos`
-
-`bg-secondary` band. `SectionTitle` (eyebrow "Momentos na Invernada") → a
-featured two-column block (`featuredMoment` video + text) → a 3-column grid of
-photo cards with caption overlays. All content from **`src/content/moments.ts`**
-(`featuredMoment` + `moments`). **This section is not in the nav menu.**
-
-### 7. Localização — `LocationSection`
+### 6. Localização — `LocationSection`
 
 **File**: `src/components/sections/LocationSection.tsx` · **Anchor**: `#localizacao`
 
-Two-column: left holds address, opening hours (from
+`bg-secondary` band. Two-column: left holds address, opening hours (from
 `siteConfig.openingHours.days`) and Maps links; right embeds a Google Maps
 `iframe`. All data comes from `siteConfig.location` and `siteConfig.openingHours`.
 
@@ -127,8 +116,8 @@ Two-column: left holds address, opening hours (from
 
 ## Navigation Anchor Map
 
-The nav (`siteConfig.nav`, feeding both `Header` and `MobileMenu`) has **6
-items** — Momentos is intentionally omitted.
+The nav (`siteConfig.nav`, feeding both `Header` and `MobileMenu`) mirrors all
+6 sections.
 
 | Section | ID | Nav Label |
 |---|---|---|
@@ -137,7 +126,6 @@ items** — Momentos is intentionally omitted.
 | Restaurante | `#restaurante` | Restaurante |
 | Agenda | `#agenda` | Agenda |
 | A Cabana | `#cabanas` | Cabana |
-| Momentos | `#momentos` | *(not in nav)* |
 | Localização | `#localizacao` | Localização |
 
 ---
@@ -148,7 +136,8 @@ Between sections, use a visual breath — never ornamental dividers:
 
 - **Whitespace only**: the natural `py-28 md:py-36` gap between sections.
 - **Background shift**: alternating `bg-background` and `bg-secondary` creates
-  natural visual chapters (Experiência, Agenda and Momentos use `bg-secondary`).
+  natural visual chapters (Experiência, Agenda and Localização use
+  `bg-secondary`).
 
 Never add ornamental borders, swoosh shapes, or triangular dividers — they look
 cheap.
