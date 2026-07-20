@@ -5,8 +5,6 @@ import { ArrowDown } from "lucide-react"
 import { useScrollProgress, useParallax } from "@/hooks/useScrollProgress"
 import { fadeUp, fadeIn } from "@/lib/animations/variants"
 import { siteConfig } from "@/config/site"
-import { whatsappLinks } from "@/lib/whatsapp"
-import { WhatsappButton } from "@/components/ui/WhatsappButton"
 
 export function HeroSection() {
   const { ref, scrollYProgress } = useScrollProgress()
@@ -91,25 +89,6 @@ export function HeroSection() {
           Um lugar para desacelerar, reunir pessoas queridas e sentir o calor
           das boas experiências.
         </motion.p>
-
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={fadeUp}
-          transition={{ delay: 1.3 }}
-          className="mt-12 flex flex-col items-center gap-4 sm:flex-row"
-        >
-          <WhatsappButton
-            href={whatsappLinks.reserveTable}
-            label={siteConfig.cta.reserveTable.label}
-            variant="primary"
-          />
-          <WhatsappButton
-            href={whatsappLinks.cabinAvailability}
-            label={siteConfig.cta.cabinAvailability.label}
-            variant="outline"
-          />
-        </motion.div>
       </div>
 
       <motion.a
