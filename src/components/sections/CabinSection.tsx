@@ -42,7 +42,7 @@ export function CabinSection() {
       <div className="mx-auto max-w-7xl">
         <AnimateIn>
           <SectionTitle
-            eyebrow="A Cabana"
+            eyebrow="A Hospedagem"
             title="Uma cabana, uma experiência só sua"
             intro="Aqui não existem dezenas de quartos. Existe uma cabana, pensada pra quem quer se desligar do mundo e se reconectar com a serra, o silêncio e quem veio junto."
           />

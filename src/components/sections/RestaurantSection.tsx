@@ -59,8 +59,8 @@ export function RestaurantSection() {
         <AnimateIn>
           <SectionTitle
             eyebrow="Restaurante"
-            title="Sabores que reúnem momentos que encantam"
-            intro="Tradição, sabor e momentos especiais esperam por você! Todos os domingos, desfrute do nosso tradicional almoço em família, preparado com todo carinho. E fique atento às nossas noites temáticas e eventos especiais, como Noite de Sopas, Café Colonial e Noite Italiana, realizados em datas selecionadas para tornar sua experiência ainda mais saborosa. Acompanhe nossas novidades e venha viver bons momentos conosco."
+            title="Sabores que reúnem, momentos que encantam"
+            intro="Tradição, sabor e momentos especiais esperam por você! Todos os domingos, desfrute do nosso tradicional almoço em família, preparado com todo carinho. E fique atento às nossas noites temáticas e eventos especiais, como Noite de Sopas, Café Colonial e Noite Italiana, realizados em datas selecionadas para tornar sua experiência ainda mais saborosa. Acompanhe nossas novidades e venha viver bons momentos conosco!"
           />
         </AnimateIn>
 

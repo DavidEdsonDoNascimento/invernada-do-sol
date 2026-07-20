@@ -81,7 +81,7 @@ export const siteConfig = {
     { label: "Experiências", href: "#experiencias" },
     { label: "Restaurante", href: "#restaurante" },
     { label: "Agenda", href: "#agenda" },
-    { label: "Cabana", href: "#cabanas" },
+    { label: "Hospedagem", href: "#cabanas" },
     { label: "Localização", href: "#localizacao" },
   ],
 } as const

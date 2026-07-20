@@ -166,3 +166,17 @@ real sections; `docs/component-guidelines.md`, `branding.md`, `storytelling.md`,
 - Portuguese (pt-BR) for all user-facing copy
 - Tone: poetic, warm, evocative — never generic or corporate
 - Never say "clique aqui" — use verbs that create desire
+
+## Diretório de referência
+
+O diretório `ref/` contém exclusivamente o template original utilizado como referência durante o desenvolvimento.
+
+Regras obrigatórias:
+
+- Nunca editar arquivos dentro de `ref/`.
+- Nunca mover arquivos desta pasta.
+- Nunca importar componentes, estilos ou scripts diretamente dela.
+- Nunca considerar esta pasta como parte da aplicação.
+- Nunca sugerir refatorações nesta pasta.
+- Quando realizar análises de qualidade, lint ou arquitetura, considere apenas o código da aplicação.
+- Consulte `ref/` apenas quando solicitado explicitamente para comparar uma implementação com o template original.

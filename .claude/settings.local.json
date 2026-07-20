@@ -17,7 +17,11 @@
       "Bash(echo \"exit: $?\")",
       "Bash(node -e ' *)",
       "Bash(mkdir -p .preview)",
-      "Bash(git rm *)"
+      "Bash(git rm *)",
+      "Bash(git push *)",
+      "Bash(npx tsc *)",
+      "Bash(echo \"TSC_EXIT:$?\")",
+      "Bash(git commit *)"
     ]
   }
 }
